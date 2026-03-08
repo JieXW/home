@@ -1,0 +1,1135 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>网站导航编辑器</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Arimo:400,700,400italic">
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/xenon-core.css">
+    <link rel="stylesheet" href="./assets/css/xenon-components.css">
+    <link rel="stylesheet" href="./assets/css/xenon-skins.css">
+    <style>
+        :root {
+            --bg: #f3efe8;
+            --panel: #fffdf8;
+            --line: #d8d1c5;
+            --ink: #1f2430;
+            --muted: #6a736f;
+            --accent: #bb5a2a;
+            --accent-soft: #f5e2d4;
+        }
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(187, 90, 42, 0.10), transparent 30%),
+                linear-gradient(180deg, #f7f3ed, #eee6da);
+            color: var(--ink);
+            min-height: 100vh;
+        }
+        .editor-shell {
+            display: grid;
+            grid-template-columns: 320px 1fr 360px;
+            gap: 18px;
+            padding: 22px;
+        }
+        .editor-panel {
+            background: rgba(255, 253, 248, 0.92);
+            border: 1px solid rgba(216, 209, 197, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(40, 31, 22, 0.08);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        .panel-head {
+            padding: 16px 18px;
+            border-bottom: 1px solid var(--line);
+            background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(250,245,238,0.95));
+        }
+        .panel-head h1,
+        .panel-head h2 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .panel-sub {
+            margin-top: 6px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+        .panel-body {
+            padding: 16px 18px;
+        }
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .toolbar .btn {
+            border-radius: 999px;
+        }
+        .search-box {
+            width: 100%;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 12px 14px;
+            background: #fff;
+            outline: none;
+        }
+        .site-list {
+            max-height: calc(100vh - 220px);
+            overflow: auto;
+            padding-right: 4px;
+        }
+        .group-label {
+            margin: 18px 0 8px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .site-item {
+            width: 100%;
+            text-align: left;
+            border: 1px solid transparent;
+            background: transparent;
+            padding: 10px 12px;
+            border-radius: 14px;
+            margin-bottom: 8px;
+            cursor: grab;
+        }
+        .site-item:hover,
+        .site-item.active {
+            background: var(--accent-soft);
+            border-color: rgba(187, 90, 42, 0.25);
+        }
+        .site-item.dragging {
+            opacity: 0.45;
+        }
+        .site-item.drop-before {
+            box-shadow: inset 0 3px 0 var(--accent);
+        }
+        .site-item.drop-after {
+            box-shadow: inset 0 -3px 0 var(--accent);
+        }
+        .site-item strong {
+            display: block;
+            font-size: 14px;
+        }
+        .site-item span {
+            display: block;
+            color: var(--muted);
+            font-size: 12px;
+            margin-top: 4px;
+        }
+        .form-grid {
+            display: grid;
+            gap: 14px;
+        }
+        .field label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+        .field input,
+        .field textarea {
+            width: 100%;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 12px 14px;
+            background: white;
+            outline: none;
+        }
+        .field textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .preview-card {
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: white;
+            padding: 16px;
+        }
+        .preview-entry {
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            gap: 14px;
+            align-items: center;
+        }
+        .preview-logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: linear-gradient(180deg, #ffffff, #f3f6fb);
+            box-shadow: 0 10px 24px rgba(30, 42, 60, 0.10);
+            object-fit: contain;
+            padding: 8px;
+        }
+        .preview-title {
+            margin: 0 0 6px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .preview-desc {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        .helper {
+            margin-top: 14px;
+            padding: 12px 14px;
+            border-radius: 14px;
+            background: #f7f1e8;
+            color: #6d594a;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+        .template-card {
+            margin-top: 16px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: white;
+            padding: 14px;
+        }
+        .template-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin: 0 0 12px;
+        }
+        .template-list {
+            display: grid;
+            gap: 8px;
+            max-height: 280px;
+            overflow: auto;
+        }
+        .template-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 8px;
+            align-items: center;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 8px 10px;
+            background: #fffdfa;
+            cursor: grab;
+        }
+        .template-row.active {
+            background: var(--accent-soft);
+            border-color: rgba(187, 90, 42, 0.25);
+        }
+        .template-row.dragging {
+            opacity: 0.45;
+        }
+        .template-row.drop-before {
+            box-shadow: inset 0 3px 0 var(--accent);
+        }
+        .template-row.drop-after {
+            box-shadow: inset 0 -3px 0 var(--accent);
+        }
+        .template-row strong,
+        .template-row span {
+            display: block;
+        }
+        .template-row span {
+            color: var(--muted);
+            font-size: 12px;
+            margin-top: 2px;
+        }
+        .template-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .drag-hint {
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+        @media (max-width: 1200px) {
+            .editor-shell {
+                grid-template-columns: 1fr;
+            }
+            .site-list {
+                max-height: 360px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="editor-shell">
+        <section class="editor-panel">
+            <div class="panel-head">
+                <h1>站点列表</h1>
+                <div class="panel-sub">筛选、选择、增删站点。编辑后可导出新的数据文件和 HTML。</div>
+            </div>
+            <div class="panel-body">
+                <input id="searchInput" class="search-box" placeholder="搜索网站名、分类、描述" />
+                <div class="toolbar">
+                    <button class="btn btn-warning" id="addSiteBtn">新增站点</button>
+                    <button class="btn btn-default" id="duplicateBtn">复制当前</button>
+                    <button class="btn btn-danger" id="deleteBtn">删除当前</button>
+                </div>
+                <div class="drag-hint">支持拖拽左侧站点卡片调整顺序，导出时会保留当前排序。</div>
+                <div class="site-list" id="siteList"></div>
+            </div>
+        </section>
+
+        <section class="editor-panel">
+            <div class="panel-head">
+                <h2>编辑表单</h2>
+                <div class="panel-sub">分类和二级分类可直接改成新值，用于重新组织导航结构。</div>
+            </div>
+            <div class="panel-body">
+                <div class="form-grid">
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="primaryInput">一级分类</label>
+                            <input id="primaryInput" list="primaryList" />
+                        </div>
+                        <div class="field">
+                            <label for="secondaryInput">二级分类</label>
+                            <input id="secondaryInput" list="secondaryList" />
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="titleInput">网站名称</label>
+                        <input id="titleInput" />
+                    </div>
+                    <div class="field">
+                        <label for="descInput">网站描述</label>
+                        <textarea id="descInput"></textarea>
+                    </div>
+                    <div class="field">
+                        <label for="urlInput">网址</label>
+                        <input id="urlInput" />
+                    </div>
+                    <div class="field">
+                        <label for="logoInput">Logo URL</label>
+                        <input id="logoInput" />
+                    </div>
+                </div>
+                <div class="toolbar">
+                    <button class="btn btn-primary" id="exportHtmlBtn">生成并下载可直接使用的 HTML</button>
+                    <button class="btn btn-default" id="previewHtmlBtn">新窗口预览 HTML</button>
+                    <button class="btn btn-success" id="exportDataBtn">导出 site-data.js</button>
+                    <button class="btn btn-info" id="importDataBtn">导入 site-data.js</button>
+                    <button class="btn btn-default" id="resetBtn">恢复原始数据</button>
+                </div>
+                <input type="file" id="importFileInput" accept=".js,.json" style="display:none;" />
+                <div class="helper">
+                    说明：这里导出的 HTML 已经包含 logo 显示所需的初始化逻辑，下载后可直接打开使用。一级分类和二级分类现在只会在“失焦”或按回车确认时写入模板，不会边输入边生成垃圾分类。若你只是导入了新的 `site-data.js`，再点击“生成并下载可直接使用的 HTML”即可。若要覆盖项目目录，可使用 `F:\Life\4_资源\1_网页\apply-site-data.cmd` 或 `F:\Life\4_资源\1_网页\apply_site_data.py`。
+                </div>
+                <datalist id="primaryList"></datalist>
+                <datalist id="secondaryList"></datalist>
+            </div>
+        </section>
+
+        <aside class="editor-panel">
+            <div class="panel-head">
+                <h2>实时预览</h2>
+                <div class="panel-sub">这里显示当前卡片的 logo、名称和描述。</div>
+            </div>
+            <div class="panel-body">
+                <div class="preview-card">
+                    <div class="preview-entry">
+                        <img id="previewLogo" class="preview-logo" alt="" />
+                        <div>
+                            <div class="panel-sub" id="previewCategory"></div>
+                            <h3 class="preview-title" id="previewTitle"></h3>
+                            <p class="preview-desc" id="previewDesc"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="helper" id="previewUrl"></div>
+                <div class="template-card">
+                    <h3 class="template-title">分类模板管理</h3>
+                    <div class="field">
+                        <label for="templatePrimaryInput">新增一级分类</label>
+                        <input id="templatePrimaryInput" placeholder="例如：论文投稿" />
+                    </div>
+                    <div class="template-actions">
+                        <button class="btn btn-warning btn-sm" id="addPrimaryTemplateBtn">新增一级分类</button>
+                        <button class="btn btn-danger btn-sm" id="deletePrimaryTemplateBtn">删除当前一级分类</button>
+                    </div>
+                    <div class="template-list" id="primaryTemplateList"></div>
+                    <div class="field" style="margin-top: 12px;">
+                        <label for="templateSecondaryPrimaryInput">二级分类所属一级分类</label>
+                        <input id="templateSecondaryPrimaryInput" list="primaryList" placeholder="先选一级分类" />
+                    </div>
+                    <div class="field">
+                        <label for="templateSecondaryInput">新增二级分类</label>
+                        <input id="templateSecondaryInput" placeholder="例如：投稿期刊" />
+                    </div>
+                    <div class="template-actions">
+                        <button class="btn btn-warning btn-sm" id="addSecondaryTemplateBtn">新增二级分类</button>
+                        <button class="btn btn-danger btn-sm" id="deleteSecondaryTemplateBtn">删除当前二级分类</button>
+                    </div>
+                    <div class="template-list" id="secondaryTemplateList"></div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="./site-data.js"></script>
+    <script>
+        function inferTemplates(sites) {
+            const templates = {};
+            sites.forEach(site => {
+                if (!site.primary) return;
+                if (!templates[site.primary]) templates[site.primary] = [];
+                if (site.secondary && !templates[site.primary].includes(site.secondary)) {
+                    templates[site.primary].push(site.secondary);
+                }
+            });
+            return templates;
+        }
+
+        function inferOrder(sites, templates) {
+            const primaries = [];
+            const secondaries = {};
+            sites.forEach(site => {
+                if (!site.primary) return;
+                if (!primaries.includes(site.primary)) primaries.push(site.primary);
+                if (!secondaries[site.primary]) secondaries[site.primary] = [];
+                if (site.secondary && !secondaries[site.primary].includes(site.secondary)) {
+                    secondaries[site.primary].push(site.secondary);
+                }
+            });
+            Object.keys(templates).forEach(primary => {
+                if (!primaries.includes(primary)) primaries.push(primary);
+                if (!secondaries[primary]) secondaries[primary] = [];
+                (templates[primary] || []).forEach(secondary => {
+                    if (!secondaries[primary].includes(secondary)) secondaries[primary].push(secondary);
+                });
+            });
+            return { primaries, secondaries };
+        }
+
+        function normalizeData(raw) {
+            if (Array.isArray(raw)) {
+                const templates = inferTemplates(raw);
+                return { sites: raw, templates, order: inferOrder(raw, templates) };
+            }
+            const sites = raw?.sites || [];
+            const templates = raw?.templates || inferTemplates(sites);
+            const order = raw?.order || raw?.templateOrder || inferOrder(sites, templates);
+            return { sites, templates, order };
+        }
+
+        const originalBundle = normalizeData(JSON.parse(JSON.stringify(window.SITE_DATA || [])));
+        let sites = JSON.parse(JSON.stringify(originalBundle.sites));
+        let templates = JSON.parse(JSON.stringify(originalBundle.templates));
+        let order = JSON.parse(JSON.stringify(originalBundle.order));
+        let currentId = sites[0]?.id ?? null;
+        let draggedId = null;
+        let draggedTemplate = null;
+        let activeTemplatePrimary = order.primaries[0] || sites[0]?.primary || "";
+
+        const $ = (id) => document.getElementById(id);
+        const searchInput = $("searchInput");
+        const siteList = $("siteList");
+        const primaryInput = $("primaryInput");
+        const secondaryInput = $("secondaryInput");
+        const titleInput = $("titleInput");
+        const descInput = $("descInput");
+        const urlInput = $("urlInput");
+        const logoInput = $("logoInput");
+        const previewLogo = $("previewLogo");
+        const previewCategory = $("previewCategory");
+        const previewTitle = $("previewTitle");
+        const previewDesc = $("previewDesc");
+        const previewUrl = $("previewUrl");
+        const primaryList = $("primaryList");
+        const secondaryList = $("secondaryList");
+        const primaryTemplateList = $("primaryTemplateList");
+        const secondaryTemplateList = $("secondaryTemplateList");
+        const templatePrimaryInput = $("templatePrimaryInput");
+        const templateSecondaryPrimaryInput = $("templateSecondaryPrimaryInput");
+        const templateSecondaryInput = $("templateSecondaryInput");
+        const importFileInput = $("importFileInput");
+        const previewHtmlBtn = $("previewHtmlBtn");
+
+        function downloadText(filename, text) {
+            const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            link.click();
+            setTimeout(() => URL.revokeObjectURL(link.href), 500);
+        }
+
+        function parseImportedPayload(text) {
+            const cleanedText = String(text || "").replace(/^\uFEFF/, "").trim();
+            const match = cleanedText.match(/window\.SITE_DATA\s*=\s*([\s\S]*?);\s*$/);
+            const payloadText = (match ? match[1] : cleanedText).trim();
+            try {
+                return JSON.parse(payloadText);
+            } catch (jsonError) {
+                try {
+                    return Function(`"use strict"; return (${payloadText});`)();
+                } catch (jsError) {
+                    throw new Error("无法解析导入文件");
+                }
+            }
+        }
+
+        function escapeHtml(value) {
+            return String(value ?? "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#39;");
+        }
+
+        function escapeJs(value) {
+            return String(value ?? "")
+                .replace(/\\/g, "\\\\")
+                .replace(/'/g, "\\'")
+                .replace(/\r/g, "\\r")
+                .replace(/\n/g, "\\n");
+        }
+
+        function fallbackLogoUrl(url) {
+            return `https://www.google.com/s2/favicons?sz=64&domain_url=${encodeURIComponent(url || "")}`;
+        }
+
+        function currentSite() {
+            return sites.find(site => site.id === currentId) || null;
+        }
+
+        function ensureTemplate(primary, secondary) {
+            if (!primary) return;
+            if (!templates[primary]) templates[primary] = [];
+            if (!order.primaries.includes(primary)) order.primaries.push(primary);
+            if (!order.secondaries[primary]) order.secondaries[primary] = [];
+            if (secondary && !templates[primary].includes(secondary)) {
+                templates[primary].push(secondary);
+            }
+            if (secondary && !order.secondaries[primary].includes(secondary)) {
+                order.secondaries[primary].push(secondary);
+            }
+        }
+
+        function removeTemplate(primary, secondary) {
+            if (!templates[primary]) return;
+            if (!secondary) {
+                delete templates[primary];
+                delete order.secondaries[primary];
+                order.primaries = order.primaries.filter(item => item !== primary);
+                if (activeTemplatePrimary === primary) activeTemplatePrimary = order.primaries[0] || "";
+                return;
+            }
+            templates[primary] = templates[primary].filter(item => item !== secondary);
+            order.secondaries[primary] = (order.secondaries[primary] || []).filter(item => item !== secondary);
+            if (!templates[primary].length) delete templates[primary];
+            if (!(order.secondaries[primary] || []).length) delete order.secondaries[primary];
+        }
+
+        function normalizeOrder() {
+            Object.keys(templates).forEach(primary => {
+                ensureTemplate(primary, "");
+                (templates[primary] || []).forEach(secondary => ensureTemplate(primary, secondary));
+            });
+            sites.forEach(site => ensureTemplate(site.primary, site.secondary));
+            order.primaries = order.primaries.filter(primary => templates[primary]);
+            Object.keys(order.secondaries).forEach(primary => {
+                const valid = templates[primary] || [];
+                order.secondaries[primary] = (order.secondaries[primary] || []).filter(item => valid.includes(item));
+                valid.forEach(item => {
+                    if (!order.secondaries[primary].includes(item)) order.secondaries[primary].push(item);
+                });
+            });
+            if (!activeTemplatePrimary || !templates[activeTemplatePrimary]) {
+                activeTemplatePrimary = order.primaries[0] || "";
+            }
+        }
+
+        function fillDataLists() {
+            normalizeOrder();
+            const primaries = [...new Set([...order.primaries, ...Object.keys(templates), ...sites.map(site => site.primary).filter(Boolean)])];
+            const secondaries = [...new Set([
+                ...Object.values(order.secondaries).flat(),
+                ...Object.values(templates).flat(),
+                ...sites.map(site => site.secondary).filter(Boolean),
+            ])];
+            primaryList.innerHTML = primaries.map(item => `<option value="${item}">`).join("");
+            secondaryList.innerHTML = secondaries.map(item => `<option value="${item}">`).join("");
+        }
+
+        function renderList() {
+            const keyword = searchInput.value.trim().toLowerCase();
+            const grouped = new Map();
+            sites.forEach(site => {
+                const haystack = [site.title, site.desc, site.primary, site.secondary, site.url].join(" ").toLowerCase();
+                if (keyword && !haystack.includes(keyword)) return;
+                const key = `${site.primary} / ${site.secondary}`;
+                if (!grouped.has(key)) grouped.set(key, []);
+                grouped.get(key).push(site);
+            });
+
+            siteList.innerHTML = "";
+            for (const [key, list] of grouped.entries()) {
+                const label = document.createElement("div");
+                label.className = "group-label";
+                label.textContent = key;
+                siteList.appendChild(label);
+                list.forEach(site => {
+                    const button = document.createElement("button");
+                    button.className = "site-item" + (site.id === currentId ? " active" : "");
+                    button.draggable = true;
+                    button.dataset.id = String(site.id);
+                    button.innerHTML = `<strong>${site.title}</strong><span>${site.desc}</span>`;
+                    button.onclick = () => {
+                        currentId = site.id;
+                        renderAll();
+                    };
+                    button.addEventListener("dragstart", (event) => {
+                        draggedId = site.id;
+                        button.classList.add("dragging");
+                        event.dataTransfer.effectAllowed = "move";
+                        event.dataTransfer.setData("text/plain", String(site.id));
+                    });
+                    button.addEventListener("dragend", () => {
+                        draggedId = null;
+                        siteList.querySelectorAll(".site-item").forEach(item => item.classList.remove("dragging", "drop-before", "drop-after"));
+                    });
+                    button.addEventListener("dragover", (event) => {
+                        event.preventDefault();
+                        const rect = button.getBoundingClientRect();
+                        const before = event.clientY < rect.top + rect.height / 2;
+                        button.classList.toggle("drop-before", before);
+                        button.classList.toggle("drop-after", !before);
+                    });
+                    button.addEventListener("dragleave", () => {
+                        button.classList.remove("drop-before", "drop-after");
+                    });
+                    button.addEventListener("drop", (event) => {
+                        event.preventDefault();
+                        const sourceId = Number(event.dataTransfer.getData("text/plain") || draggedId);
+                        const targetId = site.id;
+                        button.classList.remove("drop-before", "drop-after");
+                        if (!sourceId || sourceId === targetId) return;
+                        const sourceIndex = sites.findIndex(item => item.id === sourceId);
+                        const targetIndex = sites.findIndex(item => item.id === targetId);
+                        if (sourceIndex < 0 || targetIndex < 0) return;
+                        const rect = button.getBoundingClientRect();
+                        const insertBefore = event.clientY < rect.top + rect.height / 2;
+                        const [moved] = sites.splice(sourceIndex, 1);
+                        let nextIndex = sites.findIndex(item => item.id === targetId);
+                        if (nextIndex < 0) nextIndex = sites.length;
+                        sites.splice(insertBefore ? nextIndex : nextIndex + 1, 0, moved);
+                        currentId = sourceId;
+                        renderAll();
+                    });
+                    siteList.appendChild(button);
+                });
+            }
+        }
+
+        function renderTemplates() {
+            fillDataLists();
+            primaryTemplateList.innerHTML = order.primaries.map(primary => `
+                <div class="template-row ${primary === activeTemplatePrimary ? "active" : ""}" draggable="true" data-type="primary" data-primary="${primary}">
+                    <div>
+                        <strong>${primary}</strong>
+                        <span>${(order.secondaries[primary] || []).join(" / ") || "暂无二级分类"}</span>
+                    </div>
+                    <button class="btn btn-default btn-sm" data-select-primary="${primary}">选中</button>
+                </div>
+            `).join("");
+
+            const secondaryItems = activeTemplatePrimary ? (order.secondaries[activeTemplatePrimary] || []) : [];
+            secondaryTemplateList.innerHTML = secondaryItems.map(secondary => `
+                <div class="template-row" draggable="true" data-type="secondary" data-primary="${activeTemplatePrimary}" data-secondary="${secondary}">
+                    <div>
+                        <strong>${secondary}</strong>
+                        <span>${activeTemplatePrimary}</span>
+                    </div>
+                    <button class="btn btn-default btn-sm" data-select-secondary="${secondary}">套用</button>
+                </div>
+            `).join("");
+
+            document.querySelectorAll("[data-select-primary]").forEach(button => {
+                button.onclick = () => {
+                    const primary = button.dataset.selectPrimary;
+                    activeTemplatePrimary = primary;
+                    primaryInput.value = primary;
+                    templateSecondaryPrimaryInput.value = primary;
+                    renderAll();
+                };
+            });
+
+            document.querySelectorAll("[data-select-secondary]").forEach(button => {
+                button.onclick = () => {
+                    const secondary = button.dataset.selectSecondary;
+                    secondaryInput.value = secondary;
+                    templateSecondaryInput.value = secondary;
+                    const site = currentSite();
+                    if (site && activeTemplatePrimary) {
+                        site.primary = activeTemplatePrimary;
+                        site.secondary = secondary;
+                    }
+                    renderAll();
+                };
+            });
+
+            document.querySelectorAll(".template-row[draggable='true']").forEach(row => {
+                row.addEventListener("dragstart", (event) => {
+                    draggedTemplate = {
+                        type: row.dataset.type,
+                        primary: row.dataset.primary || "",
+                        secondary: row.dataset.secondary || "",
+                    };
+                    row.classList.add("dragging");
+                    event.dataTransfer.effectAllowed = "move";
+                    event.dataTransfer.setData("text/plain", JSON.stringify(draggedTemplate));
+                });
+                row.addEventListener("dragend", () => {
+                    draggedTemplate = null;
+                    document.querySelectorAll(".template-row").forEach(item => item.classList.remove("dragging", "drop-before", "drop-after"));
+                });
+                row.addEventListener("dragover", (event) => {
+                    event.preventDefault();
+                    if (!draggedTemplate || draggedTemplate.type !== row.dataset.type) return;
+                    if (draggedTemplate.type === "secondary" && draggedTemplate.primary !== row.dataset.primary) return;
+                    const rect = row.getBoundingClientRect();
+                    const before = event.clientY < rect.top + rect.height / 2;
+                    row.classList.toggle("drop-before", before);
+                    row.classList.toggle("drop-after", !before);
+                });
+                row.addEventListener("dragleave", () => {
+                    row.classList.remove("drop-before", "drop-after");
+                });
+                row.addEventListener("drop", (event) => {
+                    event.preventDefault();
+                    if (!draggedTemplate || draggedTemplate.type !== row.dataset.type) return;
+                    const rect = row.getBoundingClientRect();
+                    const insertBefore = event.clientY < rect.top + rect.height / 2;
+                    row.classList.remove("drop-before", "drop-after");
+                    if (row.dataset.type === "primary") {
+                        const source = draggedTemplate.primary;
+                        const target = row.dataset.primary;
+                        if (!source || !target || source === target) return;
+                        const sourceIndex = order.primaries.indexOf(source);
+                        const targetIndex = order.primaries.indexOf(target);
+                        if (sourceIndex < 0 || targetIndex < 0) return;
+                        order.primaries.splice(sourceIndex, 1);
+                        const nextIndex = order.primaries.indexOf(target);
+                        order.primaries.splice(insertBefore ? nextIndex : nextIndex + 1, 0, source);
+                        activeTemplatePrimary = source;
+                    } else {
+                        const primary = row.dataset.primary;
+                        const source = draggedTemplate.secondary;
+                        const target = row.dataset.secondary;
+                        const list = order.secondaries[primary] || [];
+                        if (!primary || !source || !target || source === target) return;
+                        const sourceIndex = list.indexOf(source);
+                        const targetIndex = list.indexOf(target);
+                        if (sourceIndex < 0 || targetIndex < 0) return;
+                        list.splice(sourceIndex, 1);
+                        const nextIndex = list.indexOf(target);
+                        list.splice(insertBefore ? nextIndex : nextIndex + 1, 0, source);
+                    }
+                    renderAll();
+                });
+            });
+        }
+
+        function syncForm() {
+            const site = currentSite();
+            if (!site) return;
+            activeTemplatePrimary = site.primary || activeTemplatePrimary;
+            primaryInput.value = site.primary || "";
+            secondaryInput.value = site.secondary || "";
+            templateSecondaryPrimaryInput.value = site.primary || "";
+            templateSecondaryInput.value = site.secondary || "";
+            titleInput.value = site.title || "";
+            descInput.value = site.desc || "";
+            urlInput.value = site.url || "";
+            logoInput.value = site.logo_url || "";
+        }
+
+        function syncPreview() {
+            const site = currentSite();
+            if (!site) return;
+            previewLogo.src = site.logo_url || `https://www.google.com/s2/favicons?sz=64&domain_url=${encodeURIComponent(site.url || "")}`;
+            previewLogo.onerror = () => {
+                previewLogo.src = `https://www.google.com/s2/favicons?sz=64&domain_url=${encodeURIComponent(site.url || "")}`;
+            };
+            previewCategory.textContent = `${site.primary} / ${site.secondary}`;
+            previewTitle.textContent = site.title || "未命名站点";
+            previewDesc.textContent = site.desc || "暂无描述";
+            previewUrl.textContent = site.url || "";
+        }
+
+        function renderAll() {
+            fillDataLists();
+            renderList();
+            renderTemplates();
+            syncForm();
+            syncPreview();
+        }
+
+        function bindField(input, key) {
+            input.addEventListener("input", () => {
+                const site = currentSite();
+                if (!site) return;
+                site[key] = input.value.trim();
+                if (key === "primary") ensureTemplate(site.primary, site.secondary);
+                if (key === "secondary") ensureTemplate(site.primary, site.secondary);
+                renderAll();
+            });
+        }
+
+        function bindDeferredCategoryField(input, key) {
+            let draftValue = "";
+
+            input.addEventListener("focus", () => {
+                draftValue = input.value;
+            });
+
+            input.addEventListener("input", () => {
+                draftValue = input.value;
+            });
+
+            const commit = () => {
+                const site = currentSite();
+                if (!site) return;
+                const nextValue = draftValue.trim();
+                if ((site[key] || "") === nextValue) return;
+                site[key] = nextValue;
+                ensureTemplate(site.primary, site.secondary);
+                renderAll();
+            };
+
+            input.addEventListener("blur", commit);
+            input.addEventListener("change", commit);
+            input.addEventListener("keydown", (event) => {
+                if (event.key !== "Enter") return;
+                event.preventDefault();
+                input.blur();
+            });
+        }
+
+        bindDeferredCategoryField(primaryInput, "primary");
+        bindDeferredCategoryField(secondaryInput, "secondary");
+        bindField(titleInput, "title");
+        bindField(descInput, "desc");
+        bindField(urlInput, "url");
+        bindField(logoInput, "logo_url");
+        searchInput.addEventListener("input", renderList);
+
+        $("addSiteBtn").onclick = () => {
+            const nextId = Math.max(...sites.map(site => site.id), 0) + 1;
+            const site = {
+                id: nextId,
+                primary: "其他网站",
+                secondary: "未细分",
+                title: "新站点",
+                desc: "这里填写你自己的说明。",
+                url: "https://example.com/",
+                host: "example.com",
+                logo_url: "https://www.google.com/s2/favicons?sz=64&domain_url=https%3A%2F%2Fexample.com",
+            };
+            ensureTemplate(site.primary, site.secondary);
+            sites.unshift(site);
+            currentId = nextId;
+            renderAll();
+        };
+
+        $("duplicateBtn").onclick = () => {
+            const site = currentSite();
+            if (!site) return;
+            const nextId = Math.max(...sites.map(item => item.id), 0) + 1;
+            const copy = { ...site, id: nextId, title: site.title + "（副本）" };
+            ensureTemplate(copy.primary, copy.secondary);
+            sites.unshift(copy);
+            currentId = nextId;
+            renderAll();
+        };
+
+        $("addPrimaryTemplateBtn").onclick = () => {
+            const primary = templatePrimaryInput.value.trim();
+            if (!primary) return;
+            ensureTemplate(primary, "");
+            templateSecondaryPrimaryInput.value = primary;
+            templatePrimaryInput.value = "";
+            renderAll();
+        };
+
+        $("deletePrimaryTemplateBtn").onclick = () => {
+            const primary = (templateSecondaryPrimaryInput.value || primaryInput.value || templatePrimaryInput.value).trim();
+            if (!primary || !templates[primary]) return;
+            const usedCount = sites.filter(site => site.primary === primary).length;
+            if (usedCount) {
+                const ok = window.confirm(`一级分类“${primary}”下还有 ${usedCount} 个站点。删除模板时将把这些站点改到“其他网站 / 未细分”，是否继续？`);
+                if (!ok) return;
+                ensureTemplate("其他网站", "未细分");
+                sites.forEach(site => {
+                    if (site.primary === primary) {
+                        site.primary = "其他网站";
+                        site.secondary = "未细分";
+                    }
+                });
+            }
+            removeTemplate(primary, "");
+            templateSecondaryPrimaryInput.value = "";
+            renderAll();
+        };
+
+        $("addSecondaryTemplateBtn").onclick = () => {
+            const primary = templateSecondaryPrimaryInput.value.trim();
+            const secondary = templateSecondaryInput.value.trim();
+            if (!primary || !secondary) return;
+            ensureTemplate(primary, secondary);
+            templateSecondaryInput.value = "";
+            renderAll();
+        };
+
+        $("deleteSecondaryTemplateBtn").onclick = () => {
+            const primary = (templateSecondaryPrimaryInput.value || primaryInput.value).trim();
+            const secondary = (templateSecondaryInput.value || secondaryInput.value).trim();
+            if (!primary || !secondary || !(templates[primary] || []).includes(secondary)) return;
+            const usedCount = sites.filter(site => site.primary === primary && site.secondary === secondary).length;
+            if (usedCount) {
+                const ok = window.confirm(`二级分类“${primary} / ${secondary}”下还有 ${usedCount} 个站点。删除模板时将把这些站点改到“${primary} / 未细分”，是否继续？`);
+                if (!ok) return;
+                ensureTemplate(primary, "未细分");
+                sites.forEach(site => {
+                    if (site.primary === primary && site.secondary === secondary) {
+                        site.secondary = "未细分";
+                    }
+                });
+            }
+            removeTemplate(primary, secondary);
+            templateSecondaryInput.value = "";
+            renderAll();
+        };
+
+        $("deleteBtn").onclick = () => {
+            if (!currentId) return;
+            sites = sites.filter(site => site.id !== currentId);
+            currentId = sites[0]?.id ?? null;
+            renderAll();
+        };
+
+        $("resetBtn").onclick = () => {
+            sites = JSON.parse(JSON.stringify(originalBundle.sites));
+            templates = JSON.parse(JSON.stringify(originalBundle.templates));
+            order = JSON.parse(JSON.stringify(originalBundle.order));
+            currentId = sites[0]?.id ?? null;
+            activeTemplatePrimary = order.primaries[0] || sites[0]?.primary || "";
+            renderAll();
+        };
+
+        $("exportDataBtn").onclick = () => {
+            const payload = {
+                sites: sites.map(({ id, ...site }) => ({ id, ...site })),
+                templates,
+                order,
+            };
+            downloadText("site-data.js", "window.SITE_DATA = " + JSON.stringify(payload, null, 2) + ";\n");
+        };
+
+        $("importDataBtn").onclick = () => importFileInput.click();
+        importFileInput.onchange = async (event) => {
+            const file = event.target.files?.[0];
+            if (!file) return;
+            const text = await file.text();
+            try {
+                const imported = normalizeData(parseImportedPayload(text));
+                sites = JSON.parse(JSON.stringify(imported.sites));
+                templates = JSON.parse(JSON.stringify(imported.templates));
+                order = JSON.parse(JSON.stringify(imported.order));
+                currentId = sites[0]?.id ?? null;
+                activeTemplatePrimary = order.primaries[0] || sites[0]?.primary || "";
+                renderAll();
+                window.alert(`导入成功：${file.name}\n站点数：${sites.length}`);
+            } catch (error) {
+                window.alert("导入失败：文件内容不是有效的 site-data.js 或 JSON。");
+            } finally {
+                event.target.value = "";
+            }
+        };
+
+        function buildExportHtml(data) {
+            const grouped = {};
+            data.forEach(site => {
+                if (!grouped[site.primary]) grouped[site.primary] = {};
+                if (!grouped[site.primary][site.secondary]) grouped[site.primary][site.secondary] = [];
+                grouped[site.primary][site.secondary].push(site);
+            });
+
+            const primaryKeys = order.primaries.filter(primary => grouped[primary]).concat(Object.keys(grouped).filter(primary => !order.primaries.includes(primary)));
+            const menuHtml = primaryKeys.map(primary => {
+                const secondaryMap = grouped[primary];
+                const secondaryKeys = ((order.secondaries[primary] || []).filter(secondary => secondaryMap[secondary])).concat(Object.keys(secondaryMap).filter(secondary => !(order.secondaries[primary] || []).includes(secondary)));
+                return `
+                    <li>
+                        <a href="#${escapeHtml(primary)}" class="smooth">
+                            <i class="fa fa-folder-open-o"></i>
+                            <span class="title">${escapeHtml(primary)}</span>
+                        </a>
+                        <ul>
+                            ${secondaryKeys.map(secondary => `
+                            <li>
+                                <a href="#${escapeHtml(primary)}-${escapeHtml(secondary)}" class="smooth">
+                                    <span class="title">${escapeHtml(secondary)}</span>
+                                </a>
+                            </li>`).join("")}
+                        </ul>
+                    </li>`;
+            }).join("");
+
+            const contentHtml = primaryKeys.map(primary => {
+                const secondaryMap = grouped[primary];
+                const secondaryKeys = ((order.secondaries[primary] || []).filter(secondary => secondaryMap[secondary])).concat(Object.keys(secondaryMap).filter(secondary => !(order.secondaries[primary] || []).includes(secondary)));
+                return `
+            <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="${escapeHtml(primary)}"></i>${escapeHtml(primary)}</h4>
+            ${secondaryKeys.map(secondary => {
+                const items = secondaryMap[secondary];
+                return `
+            <div class="section-subtitle" id="${escapeHtml(primary)}-${escapeHtml(secondary)}">
+                <span>${escapeHtml(secondary)}</span>
+                <small>(${items.length})</small>
+            </div>
+            <div class="row">
+                ${items.map(site => {
+                    const fallback = fallbackLogoUrl(site.url);
+                    const logo = site.logo_url || fallback;
+                    return `
+                <div class="col-sm-3 col-xs-6">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('${escapeJs(site.url)}', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="${escapeHtml(site.url)}">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img site-logo-wrap">
+                                <img src="${escapeHtml(logo)}" data-src="${escapeHtml(logo)}" data-fallback="${escapeHtml(fallback)}" class="lozad site-logo" width="44" height="44" alt="${escapeHtml(site.title)}" onerror="if(this.dataset.fallback && this.src !== this.dataset.fallback) { this.src = this.dataset.fallback; }">
+                            </a>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>${escapeHtml(site.title)}</strong>
+                                </a>
+                                <p class="overflowClip_2">${escapeHtml(site.desc)}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+                }).join("")}
+            </div>
+            <br />`;
+            }).join("")}`;
+            }).join("");
+
+            return `<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>我的网址导航</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Arimo:400,700,400italic">
+    <link rel="stylesheet" href="./assets/css/fonts/linecons/css/linecons.css">
+    <link rel="stylesheet" href="./assets/css/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/xenon-core.css">
+    <link rel="stylesheet" href="./assets/css/xenon-components.css">
+    <link rel="stylesheet" href="./assets/css/xenon-skins.css">
+    <link rel="stylesheet" href="./assets/css/nav.css">
+    <script src="./assets/js/jquery-1.11.1.min.js"><\/script>
+    <style>
+        .sidebar-menu .main-menu > li > a { display:flex; align-items:center; gap:10px; }
+        .sidebar-menu .main-menu > li > a > i { width:16px; text-align:center; flex:0 0 16px; }
+        .sidebar-menu .main-menu > li > a .title { display:block; flex:1 1 auto; line-height:1.45; }
+        .sidebar-menu .main-menu > li > ul > li > a { display:flex; align-items:center; min-height:34px; padding-left:38px; position:relative; }
+        .sidebar-menu .main-menu > li > ul > li > a::before { content:""; position:absolute; left:22px; top:50%; width:5px; height:5px; border-radius:50%; background:rgba(255,255,255,.45); transform:translateY(-50%); }
+        .section-subtitle { display:flex; gap:8px; align-items:baseline; color:#666; font-size:16px; font-weight:700; margin:10px 0 12px; }
+        .section-subtitle small { color:#999; font-size:12px; }
+        .site-logo-wrap { width:44px; height:44px; display:inline-flex; align-items:center; justify-content:center; border-radius:12px; background:linear-gradient(180deg,#fff,#f5f7fb); box-shadow:0 6px 18px rgba(22,34,51,.08); overflow:hidden; flex:0 0 44px; }
+        .site-logo { width:100%; height:100%; object-fit:contain; padding:6px; }
+    </style>
+</head>
+<body class="page-body">
+    <div class="page-container">
+        <div class="sidebar-menu toggle-others fixed">
+            <div class="sidebar-menu-inner">
+                <header class="logo-env">
+                    <div class="logo">
+                        <a href="./indexnew2.html" class="logo-expanded"><img src="./assets/images/logo@2x.png" width="100%" alt="" /></a>
+                        <a href="./indexnew2.html" class="logo-collapsed"><img src="./assets/images/logo-collapsed@2x.png" width="40" alt="" /></a>
+                    </div>
+                </header>
+                <ul id="main-menu" class="main-menu">${menuHtml}</ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <nav class="navbar user-info-navbar" role="navigation">
+                <ul class="user-info-menu left-links list-inline list-unstyled"><li class="hidden-sm hidden-xs"><a href="#" data-toggle="sidebar"><i class="fa-bars"></i></a></li></ul>
+            </nav>
+            ${contentHtml}
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        const observer = lozad();
+        observer.observe();
+
+        $('a.smooth').click(function(ev) {
+            ev.preventDefault();
+            public_vars.$mainMenu.add(public_vars.$sidebarProfile).toggleClass('mobile-is-visible');
+            ps_destroy();
+            $('html, body').animate({
+                scrollTop: $($(this).attr('href')).offset().top - 30
+            }, {
+                duration: 500,
+                easing: 'swing'
+            });
+        });
+    });
+
+    $('a.smooth').click(function(e) {
+        $('#main-menu li').each(function() {
+            $(this).removeClass('active');
+        });
+        $(this).parent('li').addClass('active');
+        e.preventDefault();
+    });
+    <\/script>
+    <script src="./assets/js/bootstrap.min.js"><\/script>
+    <script src="./assets/js/TweenMax.min.js"><\/script>
+    <script src="./assets/js/resizeable.js"><\/script>
+    <script src="./assets/js/joinable.js"><\/script>
+    <script src="./assets/js/xenon-api.js"><\/script>
+    <script src="./assets/js/xenon-toggles.js"><\/script>
+    <script src="./assets/js/xenon-custom.js"><\/script>
+    <script src="./assets/js/lozad.js"><\/script>
+</body>
+</html>`;
+        }
+
+        $("exportHtmlBtn").onclick = () => {
+            downloadText("indexnew2.html", buildExportHtml(sites));
+        };
+
+        previewHtmlBtn.onclick = () => {
+            const blob = new Blob([buildExportHtml(sites)], { type: "text/html;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            window.open(url, "_blank");
+            setTimeout(() => URL.revokeObjectURL(url), 60000);
+        };
+
+        renderAll();
+    </script>
+</body>
+</html>
+

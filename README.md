@@ -190,4 +190,116 @@ Screenshot 📷
 ![](http://7xnb6x.com1.z0.glb.clouddn.com/webstack-05-production.png)
 ![](http://7xnb6x.com1.z0.glb.clouddn.com/webstack-06-production2.png)
 
+## 我的网址导航说明
+
+本项目在原始 WebStack 模板基础上，增加了一套面向个人使用的网址导航维护流程，目标是把分散在 Markdown、浏览器收藏和临时记录里的站点，整理成可以直接打开、可继续维护、可导出发布的导航页。
+
+### 项目目的
+
+- 将个人常用网站整理成分级导航页
+- 支持一级分类和二级分类管理
+- 支持站点名称、描述、链接、Logo 的手动修订
+- 保留 WebStack 页面结构，同时适配个人知识管理和长期维护
+
+### 当前主要文件
+
+- `indexnew2.html`：当前生成后的导航页
+- `site-data.js`：导航数据源
+- `site-editor.html`：交互式编辑器
+- `site-editornew.html`：改进版交互式编辑器
+- `apply_site_data.py`：根据 `site-data.js` 生成 `indexnew2.html`
+- `apply-site-data.cmd`：Windows 下双击可运行的生成入口
+- `_build_indexnew2.py`：早期整理 Markdown 到导航页的生成脚本
+
+### 可以做到的事
+
+- 在浏览器里交互式修改站点分类
+- 拖拽调整站点顺序
+- 拖拽调整一级分类和二级分类顺序
+- 新增、复制、删除站点
+- 新增、删除分类模板
+- 导入 `site-data.js`
+- 导出新的 `site-data.js`
+- 直接生成可用的 HTML 导航页
+
+### 使用方式
+
+#### 1. 交互式编辑
+
+打开 `site-editornew.html`，在页面中完成：
+
+- 修改一级分类和二级分类
+- 修改网站名称
+- 修改网站描述
+- 修改网址
+- 修改 Logo 链接
+- 拖拽调整站点顺序
+
+说明：
+
+- 一级分类和二级分类现在只会在输入框失焦或按回车后写入模板
+- 这样不会因为输入到一半而生成垃圾分类
+
+#### 2. 直接生成 HTML
+
+编辑器中可以直接导出 HTML。
+
+如果你想在本地稳定生成正式文件，推荐使用脚本：
+
+```powershell
+python apply_site_data.py
+```
+
+或者直接双击：
+
+```text
+apply-site-data.cmd
+```
+
+脚本默认会：
+
+- 自动查找仓库目录里最新的 `site-data*.js`
+- 将其整理写回 `site-data.js`
+- 生成新的 `indexnew2.html`
+
+如果要指定某个数据文件：
+
+```powershell
+python apply_site_data.py "site-data (6).js"
+```
+
+### 本次增加的功能
+
+- 新增交互式编辑器
+- 新增改进版编辑器 `site-editornew.html`
+- 支持一级分类和二级分类模板管理
+- 支持站点拖拽排序
+- 支持分类拖拽排序
+- 支持 `site-data.js` 导入与导出
+- 新增本地生成脚本 `apply_site_data.py`
+- 新增 Windows 启动脚本 `apply-site-data.cmd`
+- 导出的 HTML 保留 Logo 初始化逻辑，避免图标整体不显示
+- 页面标题从模板默认文案调整为“我的网址导航”
+- 清理了未被站点使用的脏分类模板
+
+### 本次修改说明
+
+本次提交主要围绕“从个人站点数据生成可维护的网址导航页”展开，包含以下调整：
+
+- 将整理后的站点数据落地为 `site-data.js`
+- 将导航页落地为 `indexnew2.html`
+- 增加编辑器，支持对分类、描述、链接、Logo 的交互式维护
+- 增加脚本化生成流程，避免浏览器下载的 HTML 被系统安全策略拦截
+- 修复导出 HTML 中 Logo 懒加载初始化缺失的问题
+- 将原模板中的默认品牌文案替换为个人站点文案
+
+### 建议工作流
+
+1. 打开 `site-editornew.html`
+2. 修改站点与分类
+3. 导出或保存新的 `site-data.js`
+4. 运行 `apply-site-data.cmd`
+5. 打开 `indexnew2.html`
+6. 确认无误后再提交到 GitHub Pages
+
 
