@@ -203,6 +203,7 @@ Screenshot 📷
 
 ### 当前主要文件
 
+- `index.html`：GitHub Pages 当前发布入口，访问地址为 `https://jiexw.github.io/home/`
 - `indexnew2.html`：当前生成后的导航页
 - `site-data.js`：导航数据源
 - `site-editor.html`：交互式编辑器
@@ -352,6 +353,17 @@ python merge_md_into_site_data.py "常用网站2.md"
 
 - `indexnew2 - 副本*.html`
 - `site-data - 副本*.js`
+
+#### 2026-03-09 手动调整后的重新发布
+
+本次更新使用手动调整后的最新导出文件重新发布导航页：
+
+- 将最新导出的 `indexnew2 - 副本.html` 覆盖为正式发布文件 `index.html` 与 `indexnew2.html`
+- 将最新导出的 `site-data - 副本.js` 覆盖为正式数据文件 `site-data.js`
+- 同步更新 GitHub Pages 发布内容，当前访问地址为 `https://jiexw.github.io/home/`
+- 保留现有 favicon、manifest 与已安装网页应用所需的图标配置
+
+这一步的目的，是让手动校正后的分类、站点标题、Logo、描述和排序，直接成为线上版本，而不是停留在本地副本文件中
 
 ### 建议工作流
 
