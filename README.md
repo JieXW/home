@@ -356,14 +356,14 @@ python merge_md_into_site_data.py "常用网站2.md"
 
 #### 2026-03-09 手动调整后的重新发布
 
-本次更新使用手动调整后的最新导出文件重新发布导航页：
+本次更新使用手动调整后的最新文件重新发布导航页：
 
-- 将最新导出的 `indexnew2 - 副本.html` 覆盖为正式发布文件 `index.html` 与 `indexnew2.html`
-- 将最新导出的 `site-data - 副本.js` 覆盖为正式数据文件 `site-data.js`
+- 将最新的 `index.html` 作为正式发布页面，并同步覆盖 `indexnew2.html`
+- 将最新的 `site-data (11).js` 覆盖为正式数据文件 `site-data.js`
 - 同步更新 GitHub Pages 发布内容，当前访问地址为 `https://jiexw.github.io/home/`
 - 保留现有 favicon、manifest 与已安装网页应用所需的图标配置
 
-这一步的目的，是让手动校正后的分类、站点标题、Logo、描述和排序，直接成为线上版本，而不是停留在本地副本文件中
+这一步的目的，是让手动校正后的分类、站点标题、Logo、描述和排序，直接成为线上版本，而不是停留在本地导出文件中
 
 ### 建议工作流
 

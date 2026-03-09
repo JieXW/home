@@ -1,6 +1,16 @@
 window.SITE_DATA = {
   "sites": [
     {
+      "id": 278,
+      "primary": "AI与Agent",
+      "secondary": "平台与开发",
+      "title": "CodeX",
+      "desc": "CodeX",
+      "url": "https://chatgpt.com/codex?",
+      "host": "example.com",
+      "logo_url": "https://chatgpt.com/codex?"
+    },
+    {
       "id": 17,
       "title": "USTC邮件系统",
       "desc": "USTC邮件系统",
@@ -13,9 +23,9 @@ window.SITE_DATA = {
     {
       "id": 250,
       "primary": "常用工具",
-      "secondary": "云服务与存储",
+      "secondary": "通用效率",
       "title": "QQ邮箱",
-      "desc": "QQ邮箱网页版入口，支持收发邮件、管理联系人与附件。",
+      "desc": "QQ邮箱网页版入口",
       "url": "https://wx.mail.qq.com/",
       "host": "wx.mail.qq.com",
       "logo_url": "https://res.wx.qq.com/t/webmail/webmail/res/static/images/base/style/favicon/qqmail_favicon_16h.bc34dcb.png"
@@ -23,9 +33,9 @@ window.SITE_DATA = {
     {
       "id": 251,
       "primary": "常用工具",
-      "secondary": "云服务与存储",
+      "secondary": "通用效率",
       "title": "Gmail",
-      "desc": "Gmail 邮箱网页版入口，用于收发邮件与管理 Google 邮件账户。",
+      "desc": "Gmail 邮箱网页版入口",
       "url": "https://mail.google.com/",
       "host": "mail.google.com",
       "logo_url": "https://accounts.google.com/favicon.ico"
@@ -113,7 +123,7 @@ window.SITE_DATA = {
     {
       "id": 7,
       "title": "阿里云 OSS",
-      "desc": "阿里云 OSS，云服务、控制台或在线存储入口。",
+      "desc": "阿里云 OSS，图床",
       "url": "https://oss.console.aliyun.com/overview",
       "host": "oss.console.aliyun.com",
       "logo_url": "https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico",
@@ -123,7 +133,7 @@ window.SITE_DATA = {
     {
       "id": 6,
       "title": "腾讯云 COS",
-      "desc": "腾讯云 COS，云服务、控制台或在线存储入口。",
+      "desc": "腾讯云 COS，图床",
       "url": "https://console.cloud.tencent.com/cos",
       "host": "console.cloud.tencent.com",
       "logo_url": "https://cloudcache.tencent-cloud.com/qcloud/favicon.ico",
@@ -135,7 +145,7 @@ window.SITE_DATA = {
       "primary": "常用工具",
       "secondary": "云服务与存储",
       "title": "百度网盘",
-      "desc": "百度网盘，提供文件同步、分享与在线存储服务。",
+      "desc": "提供文件同步、分享与在线存储服务。",
       "url": "https://pan.baidu.com/",
       "host": "pan.baidu.com",
       "logo_url": "https://nd-static.bdstatic.com/m-static/v20-main/favicon-main.ico"
@@ -145,7 +155,7 @@ window.SITE_DATA = {
       "primary": "常用工具",
       "secondary": "云服务与存储",
       "title": "夸克网盘",
-      "desc": "夸克网盘，提供文件上传、管理、分享与在线存储服务。",
+      "desc": "提供文件上传、管理、分享与在线存储服务。",
       "url": "https://pan.quark.cn/",
       "host": "pan.quark.cn",
       "logo_url": "https://sm01.alicdn.com/L1/272/1990/favicon/favi.ico"
@@ -155,7 +165,7 @@ window.SITE_DATA = {
       "primary": "常用工具",
       "secondary": "云服务与存储",
       "title": "Google 云端硬盘",
-      "desc": "Google 云端硬盘，提供文件管理、同步与在线存储服务。",
+      "desc": "提供文件管理、同步与在线存储服务。",
       "url": "https://drive.google.com/drive/my-drive",
       "host": "drive.google.com",
       "logo_url": "https://accounts.google.com/favicon.ico"
@@ -243,7 +253,7 @@ window.SITE_DATA = {
     {
       "id": 1,
       "title": "Greasy Fork",
-      "desc": "Greasy Fork - 安全且实用的用户脚本站",
+      "desc": "油猴，安全且实用的用户脚本站",
       "url": "https://greasyfork.org/zh-CN",
       "host": "greasyfork.org",
       "logo_url": "https://greasyfork.org/vite/assets/blacklogo16-DftkYuVe.png",
@@ -1033,7 +1043,7 @@ window.SITE_DATA = {
     {
       "id": 67,
       "title": "AutoDL算力云",
-      "desc": "AutoDL算力云 | 弹性、好用、省钱，GPU算力零售价格新标杆",
+      "desc": "弹性、好用、省钱，GPU算力零售价格新标杆",
       "url": "https://www.autodl.com/console/homepage/personal",
       "host": "autodl.com",
       "logo_url": "https://www.autodl.com/favicon.png",
@@ -1261,6 +1271,16 @@ window.SITE_DATA = {
       "secondary": "开发社区"
     },
     {
+      "id": 279,
+      "primary": "开发与技术",
+      "secondary": "开发社区",
+      "title": "Telegram",
+      "desc": "Telegram电报",
+      "url": "https://web.telegram.org/a/",
+      "host": "example.com",
+      "logo_url": "https://web.telegram.org/a/"
+    },
+    {
       "id": 96,
       "title": "黑马C++",
       "desc": "黑马C++",
@@ -1277,8 +1297,8 @@ window.SITE_DATA = {
       "url": "https://weibo.com/",
       "host": "weibo.com",
       "logo_url": "https://passport.weibo.com/favicon.ico",
-      "primary": "常用工具",
-      "secondary": "通用效率"
+      "primary": "社区与内容",
+      "secondary": "内容社区"
     },
     {
       "id": 101,
@@ -1811,6 +1831,26 @@ window.SITE_DATA = {
       "secondary": "央国企与公共就业"
     },
     {
+      "id": 277,
+      "primary": "求职与招聘",
+      "secondary": "央国企与公共就业",
+      "title": "全国就业公共服务平台",
+      "desc": "全国就业公共服务平台，求职招聘、校招实习或就业服务平台。",
+      "url": "https://www.12333.gov.cn/job",
+      "host": "12333.gov.cn",
+      "logo_url": "https://www.google.com/s2/favicons?sz=64&domain_url=https%3A%2F%2Fwww.12333.gov.cn%2Fjob"
+    },
+    {
+      "id": 261,
+      "primary": "求职与招聘",
+      "secondary": "央国企与公共就业",
+      "title": "安徽人社服务平台",
+      "desc": "安徽 12333 人社服务平台，提供社保、人事与就业公共服务入口。",
+      "url": "https://m12333.cn/platform/anhui.aspx",
+      "host": "m12333.cn",
+      "logo_url": "https://m12333.cn/favicon.ico"
+    },
+    {
       "id": 174,
       "title": "全国人社政务服务平台",
       "desc": "全国人社政务服务平台，求职招聘、校招实习或就业服务平台。",
@@ -1863,7 +1903,7 @@ window.SITE_DATA = {
     {
       "id": 179,
       "title": "国外网站大全",
-      "desc": "国外网站大全 | 17Foreign",
+      "desc": "国外网站大全",
       "url": "http://www.17foreign.com/mtl/website",
       "host": "17foreign.com",
       "logo_url": "http://www.17foreign.com:80/favicon.ico",
@@ -1872,20 +1912,20 @@ window.SITE_DATA = {
     },
     {
       "id": 244,
-      "primary": "其他网站",
-      "secondary": "未细分",
-      "title": "安全验证",
-      "desc": "安全验证，常用站点入口。",
+      "primary": "常用工具",
+      "secondary": "通用效率",
+      "title": "TAG",
+      "desc": "TAG机场",
       "url": "https://tagss.pro/",
       "host": "tagss.pro",
       "logo_url": "https://tagss.pro/favicon.ico"
     },
     {
       "id": 245,
-      "primary": "其他网站",
-      "secondary": "未细分",
-      "title": "Just a moment...",
-      "desc": "Just a moment...，常用站点入口。",
+      "primary": "常用工具",
+      "secondary": "通用效率",
+      "title": "WestData机场",
+      "desc": "WestData机场",
       "url": "https://wd-gold.net/cart.php",
       "host": "wd-gold.net",
       "logo_url": "https://wd-gold.net/favicon.ico"
@@ -2052,7 +2092,7 @@ window.SITE_DATA = {
     },
     {
       "id": 200,
-      "title": "www.daad.de",
+      "title": "PhDGermany",
       "desc": "PhDGermany",
       "url": "https://www.daad.de/en/studying-in-germany/phd-studies-research/phd-germany",
       "host": "daad.de",
@@ -2074,7 +2114,7 @@ window.SITE_DATA = {
       "id": 222,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "北京百姓网",
+      "title": "百姓网",
       "desc": "北京百姓网，北京本地生活与分类信息平台，可查看租房与房产信息。",
       "url": "http://beijing.ebaixing.com/",
       "host": "beijing.ebaixing.com",
@@ -2084,7 +2124,7 @@ window.SITE_DATA = {
       "id": 223,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "北京贝壳新房",
+      "title": "贝壳",
       "desc": "贝壳北京新房平台，查看楼盘、新房房价与房产资讯。",
       "url": "https://bj.fang.ke.com/loupan",
       "host": "bj.fang.ke.com",
@@ -2094,7 +2134,7 @@ window.SITE_DATA = {
       "id": 224,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "合肥链家",
+      "title": "链家",
       "desc": "链家合肥站，提供租房、二手房与房产信息服务。",
       "url": "https://hf.lianjia.com/",
       "host": "hf.lianjia.com",
@@ -2104,7 +2144,7 @@ window.SITE_DATA = {
       "id": 225,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "安居客北京",
+      "title": "安居客",
       "desc": "安居客北京站，提供租房、二手房与新房信息。",
       "url": "https://m.anjuke.com/bj",
       "host": "m.anjuke.com",
@@ -2124,7 +2164,7 @@ window.SITE_DATA = {
       "id": 227,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "房天下深圳",
+      "title": "房天下",
       "desc": "房天下深圳站，提供新房、二手房、租房与房产资讯服务。",
       "url": "https://sz.fang.com/",
       "host": "sz.fang.com",
@@ -2144,7 +2184,7 @@ window.SITE_DATA = {
       "id": 230,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "合肥中原找房",
+      "title": "中原找房",
       "desc": "中原找房合肥站，提供租房、二手房与房产信息服务。",
       "url": "https://hf.centanet.com/",
       "host": "hf.centanet.com",
@@ -2174,7 +2214,7 @@ window.SITE_DATA = {
       "id": 233,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "天津诸葛找房",
+      "title": "诸葛找房",
       "desc": "诸葛找房天津站，提供新房、二手房、租房与房价信息。",
       "url": "https://tj.zhuge.com/",
       "host": "tj.zhuge.com",
@@ -2184,7 +2224,7 @@ window.SITE_DATA = {
       "id": 234,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "自如友家深圳租房",
+      "title": "自如友家",
       "desc": "深圳租房平台，提供直租、整租与合租房源信息。",
       "url": "https://sz.zufun.cn/",
       "host": "sz.zufun.cn",
@@ -2194,7 +2234,7 @@ window.SITE_DATA = {
       "id": 235,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "我爱我家北京",
+      "title": "我爱我家",
       "desc": "我爱我家北京站，提供租房、二手房与房产信息服务。",
       "url": "https://bj.5i5j.com/",
       "host": "bj.5i5j.com",
@@ -2204,7 +2244,7 @@ window.SITE_DATA = {
       "id": 236,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "深圳租客网",
+      "title": "租客网",
       "desc": "深圳租客网，提供公寓、合租与房屋租赁信息。",
       "url": "https://sz.zuke.com/",
       "host": "sz.zuke.com",
@@ -2214,7 +2254,7 @@ window.SITE_DATA = {
       "id": 237,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "房多多深圳",
+      "title": "房多多",
       "desc": "房多多深圳站，提供新房、租房与房产交易信息。",
       "url": "https://shenzhen.fangdd.com/",
       "host": "shenzhen.fangdd.com",
@@ -2282,8 +2322,8 @@ window.SITE_DATA = {
     },
     {
       "id": 252,
-      "primary": "生活服务",
-      "secondary": "租房与房产",
+      "primary": "AI与Agent",
+      "secondary": "通用模型",
       "title": "Aizex 合租面板",
       "desc": "Aizex 合租面板，用于查看和管理合租房源与居住协作信息。",
       "url": "https://aizex.net/",
@@ -2309,6 +2349,16 @@ window.SITE_DATA = {
       "url": "https://mp.weixin.qq.com/s/VytjlpsOe5sqIsqCnmrBVg",
       "host": "mp.weixin.qq.com",
       "logo_url": "https://res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png"
+    },
+    {
+      "id": 260,
+      "primary": "公考与时政",
+      "secondary": "公考报名与资讯",
+      "title": "中国人事考试网",
+      "desc": "中国人事考试网，提供职业资格考试公告、报名与成绩查询。",
+      "url": "http://www.cpta.com.cn/index.html",
+      "host": "www.cpta.com.cn",
+      "logo_url": "http://www.cpta.com.cn/favicon.ico"
     },
     {
       "id": 255,
@@ -2359,36 +2409,6 @@ window.SITE_DATA = {
       "url": "https://rlsbj.cq.gov.cn/",
       "host": "rlsbj.cq.gov.cn",
       "logo_url": "https://rlsbj.cq.gov.cn/favicon.ico"
-    },
-    {
-      "id": 260,
-      "primary": "考试与证书",
-      "secondary": "官方报名",
-      "title": "中国人事考试网",
-      "desc": "中国人事考试网，提供职业资格考试公告、报名与成绩查询。",
-      "url": "http://www.cpta.com.cn/index.html",
-      "host": "www.cpta.com.cn",
-      "logo_url": "http://www.cpta.com.cn/favicon.ico"
-    },
-    {
-      "id": 261,
-      "primary": "公考与时政",
-      "secondary": "政策与政务",
-      "title": "安徽12333",
-      "desc": "安徽 12333 人社服务平台，提供社保、人事与就业公共服务入口。",
-      "url": "https://m12333.cn/platform/anhui.aspx",
-      "host": "m12333.cn",
-      "logo_url": "https://m12333.cn/favicon.ico"
-    },
-    {
-      "id": 262,
-      "primary": "公考与时政",
-      "secondary": "政策与政务",
-      "title": "人力资源和社会保障部",
-      "desc": "人力资源和社会保障部，公考信息、政策资讯或时政媒体入口。",
-      "url": "https://www.mohrss.gov.cn/SYrlzyhshbzb/fwyd/SYkaoshizhaopin/zyhgjjgsydwgkzp",
-      "host": "mohrss.gov.cn",
-      "logo_url": "https://www.mohrss.gov.cn/favicon.ico"
     },
     {
       "id": 263,
@@ -2529,16 +2549,6 @@ window.SITE_DATA = {
       "url": "https://www.gov.cn/",
       "host": "www.gov.cn",
       "logo_url": "https://www.gov.cn/images/trs_favicon.ico"
-    },
-    {
-      "id": 277,
-      "primary": "求职与招聘",
-      "secondary": "央国企与公共就业",
-      "title": "全国就业公共服务平台",
-      "desc": "全国就业公共服务平台，求职招聘、校招实习或就业服务平台。",
-      "url": "https://www.12333.gov.cn/job",
-      "host": "12333.gov.cn",
-      "logo_url": "https://www.google.com/s2/favicons?sz=64&domain_url=https%3A%2F%2Fwww.12333.gov.cn%2Fjob"
     }
   ],
   "templates": {
@@ -2575,18 +2585,23 @@ window.SITE_DATA = {
       "MCP与Agent生态",
       "通用模型",
       "平台与开发",
-      "未细分"
+      "未细分",
+      "租房与房产",
+      "工具与平台"
     ],
     "社区与内容": [
       "阅读与语言",
       "内容社区",
-      "未细分"
+      "未细分",
+      "通用效率"
     ],
     "公考与时政": [
       "公考报名与资讯",
       "政策与政务",
       "时政媒体",
-      "未细分"
+      "未细分",
+      "行业招聘",
+      "官方报名"
     ],
     "招生与深造": [
       "国内招生",
@@ -2599,7 +2614,8 @@ window.SITE_DATA = {
       "综合招聘",
       "行业招聘",
       "求职辅助",
-      "校园服务"
+      "校园服务",
+      "政策与政务"
     ],
     "其他网站": [
       "未细分"
@@ -2613,10 +2629,10 @@ window.SITE_DATA = {
       "常用工具",
       "AI与Agent",
       "开发与技术",
-      "校园与USTC",
       "求职与招聘",
       "公考与时政",
       "招生与深造",
+      "校园与USTC",
       "学术科研",
       "考试与证书",
       "社区与内容",
@@ -2657,18 +2673,23 @@ window.SITE_DATA = {
         "MCP与Agent生态",
         "通用模型",
         "平台与开发",
-        "未细分"
+        "未细分",
+        "租房与房产",
+        "工具与平台"
       ],
       "社区与内容": [
         "阅读与语言",
         "内容社区",
-        "未细分"
+        "未细分",
+        "通用效率"
       ],
       "公考与时政": [
         "公考报名与资讯",
         "政策与政务",
         "时政媒体",
-        "未细分"
+        "未细分",
+        "行业招聘",
+        "官方报名"
       ],
       "招生与深造": [
         "国内招生",
@@ -2681,7 +2702,8 @@ window.SITE_DATA = {
         "综合招聘",
         "行业招聘",
         "求职辅助",
-        "校园服务"
+        "校园服务",
+        "政策与政务"
       ],
       "其他网站": [
         "未细分"
