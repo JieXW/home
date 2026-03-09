@@ -170,8 +170,8 @@ def build_html(bundle):
     <link rel="icon" type="image/png" sizes="64x64" href="./assets/images/favicon.png">
     <link rel="apple-touch-icon" sizes="192x192" href="./assets/images/icon-192.png">
     <link rel="manifest" href="./site.webmanifest">
-    <meta name="theme-color" content="#1f6feb">
-    <meta name="msapplication-TileColor" content="#1f6feb">
+    <meta name="theme-color" content="#f5f6f7">
+    <meta name="msapplication-TileColor" content="#f5f6f7">
     <meta name="msapplication-TileImage" content="./assets/images/icon-192.png">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Arimo:400,700,400italic">
     <link rel="stylesheet" href="./assets/css/fonts/linecons/css/linecons.css">

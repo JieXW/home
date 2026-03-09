@@ -13,22 +13,22 @@ window.SITE_DATA = {
     {
       "id": 250,
       "primary": "常用工具",
-      "secondary": "通用效率",
+      "secondary": "云服务与存储",
       "title": "QQ邮箱",
-      "desc": "QQ邮箱",
-      "url": "https://wx.mail.qq.com/home/index?sid=zWtJR4xhOFUukWJ5AFQ1ZQAA#/list/1/1",
-      "host": "example.com",
-      "logo_url": "https://wx.mail.qq.com/home/index?sid=zWtJR4xhOFUukWJ5AFQ1ZQAA#/list/1/1"
+      "desc": "QQ邮箱网页版入口，支持收发邮件、管理联系人与附件。",
+      "url": "https://wx.mail.qq.com/",
+      "host": "wx.mail.qq.com",
+      "logo_url": "https://res.wx.qq.com/t/webmail/webmail/res/static/images/base/style/favicon/qqmail_favicon_16h.bc34dcb.png"
     },
     {
       "id": 251,
       "primary": "常用工具",
-      "secondary": "通用效率",
+      "secondary": "云服务与存储",
       "title": "Gmail",
-      "desc": "Gmail",
-      "url": "https://mail.google.com/mail/u/0/#inbox",
-      "host": "example.com",
-      "logo_url": "https://mail.google.com/mail/u/0/#inbox"
+      "desc": "Gmail 邮箱网页版入口，用于收发邮件与管理 Google 邮件账户。",
+      "url": "https://mail.google.com/",
+      "host": "mail.google.com",
+      "logo_url": "https://accounts.google.com/favicon.ico"
     },
     {
       "id": 24,
@@ -44,11 +44,11 @@ window.SITE_DATA = {
       "id": 249,
       "primary": "开发与技术",
       "secondary": "工具与平台",
-      "title": "Colab",
-      "desc": "Colab",
+      "title": "Google Colab",
+      "desc": "Google Colab，在线运行 Python 和 Jupyter Notebook 的开发平台。",
       "url": "https://colab.research.google.com/",
-      "host": "example.com",
-      "logo_url": "https://colab.research.google.com/"
+      "host": "colab.research.google.com",
+      "logo_url": "https://ssl.gstatic.com/colaboratory-static/common/4b84b91f170e14cc9a912570b12fbf56/img/favicon.ico"
     },
     {
       "id": 220,
@@ -135,30 +135,30 @@ window.SITE_DATA = {
       "primary": "常用工具",
       "secondary": "云服务与存储",
       "title": "百度网盘",
-      "desc": "百度网盘",
-      "url": "https://pan.baidu.com/disk/main#/index?category=all",
-      "host": "example.com",
-      "logo_url": "https://pan.baidu.com/disk/main#/index?category=all"
+      "desc": "百度网盘，提供文件同步、分享与在线存储服务。",
+      "url": "https://pan.baidu.com/",
+      "host": "pan.baidu.com",
+      "logo_url": "https://nd-static.bdstatic.com/m-static/v20-main/favicon-main.ico"
     },
     {
       "id": 246,
       "primary": "常用工具",
       "secondary": "云服务与存储",
       "title": "夸克网盘",
-      "desc": "夸克网盘",
-      "url": "https://pan.quark.cn/list#/list/all",
-      "host": "example.com",
-      "logo_url": "https://pan.quark.cn/list#/list/all"
+      "desc": "夸克网盘，提供文件上传、管理、分享与在线存储服务。",
+      "url": "https://pan.quark.cn/",
+      "host": "pan.quark.cn",
+      "logo_url": "https://sm01.alicdn.com/L1/272/1990/favicon/favi.ico"
     },
     {
       "id": 248,
       "primary": "常用工具",
       "secondary": "云服务与存储",
-      "title": "Google云盘",
-      "desc": "Google云盘",
-      "url": "https://drive.google.com/drive/home?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto",
-      "host": "example.com",
-      "logo_url": "https://drive.google.com/drive/home?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto"
+      "title": "Google 云端硬盘",
+      "desc": "Google 云端硬盘，提供文件管理、同步与在线存储服务。",
+      "url": "https://drive.google.com/drive/my-drive",
+      "host": "drive.google.com",
+      "logo_url": "https://accounts.google.com/favicon.ico"
     },
     {
       "id": 218,
@@ -1653,10 +1653,10 @@ window.SITE_DATA = {
     {
       "id": 154,
       "title": "高校人才网",
-      "desc": "硕士博士高层次人才招聘服务平台",
+      "desc": "高校人才网|高才网\\_硕士博士高层次人才招聘服务平台",
       "url": "https://www.gaoxiaojob.com/",
       "host": "gaoxiaojob.com",
-      "logo_url": "https://img.gaoxiaojob.com/uploads/static/favicon.ico",
+      "logo_url": "https://www.gaoxiaojob.com/favicon.ico",
       "primary": "求职与招聘",
       "secondary": "行业招聘"
     },
@@ -1872,23 +1872,23 @@ window.SITE_DATA = {
     },
     {
       "id": 244,
-      "primary": "常用工具",
-      "secondary": "通用效率",
-      "title": "TAG",
-      "desc": "TAG梯子",
-      "url": "https://tagss.pro/#/home",
-      "host": "example.com",
-      "logo_url": "https://tagss.pro/#/home"
+      "primary": "其他网站",
+      "secondary": "未细分",
+      "title": "安全验证",
+      "desc": "安全验证，常用站点入口。",
+      "url": "https://tagss.pro/",
+      "host": "tagss.pro",
+      "logo_url": "https://tagss.pro/favicon.ico"
     },
     {
       "id": 245,
-      "primary": "常用工具",
-      "secondary": "通用效率",
-      "title": "WestData",
-      "desc": "WestData梯子",
+      "primary": "其他网站",
+      "secondary": "未细分",
+      "title": "Just a moment...",
+      "desc": "Just a moment...，常用站点入口。",
       "url": "https://wd-gold.net/cart.php",
-      "host": "example.com",
-      "logo_url": "https://wd-gold.net/cart.php"
+      "host": "wd-gold.net",
+      "logo_url": "https://wd-gold.net/favicon.ico"
     },
     {
       "id": 182,
@@ -2074,7 +2074,7 @@ window.SITE_DATA = {
       "id": 222,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "百姓网",
+      "title": "北京百姓网",
       "desc": "北京百姓网，北京本地生活与分类信息平台，可查看租房与房产信息。",
       "url": "http://beijing.ebaixing.com/",
       "host": "beijing.ebaixing.com",
@@ -2084,7 +2084,7 @@ window.SITE_DATA = {
       "id": 223,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "贝壳",
+      "title": "北京贝壳新房",
       "desc": "贝壳北京新房平台，查看楼盘、新房房价与房产资讯。",
       "url": "https://bj.fang.ke.com/loupan",
       "host": "bj.fang.ke.com",
@@ -2094,7 +2094,7 @@ window.SITE_DATA = {
       "id": 224,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "链家",
+      "title": "合肥链家",
       "desc": "链家合肥站，提供租房、二手房与房产信息服务。",
       "url": "https://hf.lianjia.com/",
       "host": "hf.lianjia.com",
@@ -2104,11 +2104,11 @@ window.SITE_DATA = {
       "id": 225,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "安居客",
+      "title": "安居客北京",
       "desc": "安居客北京站，提供租房、二手房与新房信息。",
       "url": "https://m.anjuke.com/bj",
       "host": "m.anjuke.com",
-      "logo_url": "https://m.anjuke.com/favicon.ico"
+      "logo_url": "https://pages.anjukestatic.com/usersite/touch/img/favicon.ico"
     },
     {
       "id": 226,
@@ -2124,7 +2124,7 @@ window.SITE_DATA = {
       "id": 227,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "房天下",
+      "title": "房天下深圳",
       "desc": "房天下深圳站，提供新房、二手房、租房与房产资讯服务。",
       "url": "https://sz.fang.com/",
       "host": "sz.fang.com",
@@ -2144,7 +2144,7 @@ window.SITE_DATA = {
       "id": 230,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "中原找房",
+      "title": "合肥中原找房",
       "desc": "中原找房合肥站，提供租房、二手房与房产信息服务。",
       "url": "https://hf.centanet.com/",
       "host": "hf.centanet.com",
@@ -2174,7 +2174,7 @@ window.SITE_DATA = {
       "id": 233,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "诸葛找房",
+      "title": "天津诸葛找房",
       "desc": "诸葛找房天津站，提供新房、二手房、租房与房价信息。",
       "url": "https://tj.zhuge.com/",
       "host": "tj.zhuge.com",
@@ -2184,7 +2184,7 @@ window.SITE_DATA = {
       "id": 234,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "自如友家",
+      "title": "自如友家深圳租房",
       "desc": "深圳租房平台，提供直租、整租与合租房源信息。",
       "url": "https://sz.zufun.cn/",
       "host": "sz.zufun.cn",
@@ -2194,7 +2194,7 @@ window.SITE_DATA = {
       "id": 235,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "我爱我家",
+      "title": "我爱我家北京",
       "desc": "我爱我家北京站，提供租房、二手房与房产信息服务。",
       "url": "https://bj.5i5j.com/",
       "host": "bj.5i5j.com",
@@ -2204,7 +2204,7 @@ window.SITE_DATA = {
       "id": 236,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "租客网",
+      "title": "深圳租客网",
       "desc": "深圳租客网，提供公寓、合租与房屋租赁信息。",
       "url": "https://sz.zuke.com/",
       "host": "sz.zuke.com",
@@ -2214,7 +2214,7 @@ window.SITE_DATA = {
       "id": 237,
       "primary": "生活服务",
       "secondary": "租房与房产",
-      "title": "房多多",
+      "title": "房多多深圳",
       "desc": "房多多深圳站，提供新房、租房与房产交易信息。",
       "url": "https://shenzhen.fangdd.com/",
       "host": "shenzhen.fangdd.com",
@@ -2265,7 +2265,7 @@ window.SITE_DATA = {
       "primary": "生活服务",
       "secondary": "租房与房产",
       "title": "豆瓣租房小组",
-      "desc": "提供租房交流与房源信息分享。",
+      "desc": "豆瓣租房小组，提供租房交流与房源信息分享。",
       "url": "https://www.douban.com/group/308599",
       "host": "douban.com",
       "logo_url": "https://img1.doubanio.com/favicon.ico"
@@ -2279,6 +2279,266 @@ window.SITE_DATA = {
       "url": "https://www.leyoujia.com/",
       "host": "leyoujia.com",
       "logo_url": "https://www.google.com/s2/favicons?sz=64&domain_url=https%3A%2F%2Fwww.leyoujia.com%2F"
+    },
+    {
+      "id": 252,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "Aizex 合租面板",
+      "desc": "Aizex 合租面板，用于查看和管理合租房源与居住协作信息。",
+      "url": "https://aizex.net/",
+      "host": "aizex.net",
+      "logo_url": "https://aizex.net/favicon.ico"
+    },
+    {
+      "id": 253,
+      "primary": "校园与USTC",
+      "secondary": "研究生系统",
+      "title": "文档下载",
+      "desc": "文档下载，研究生招生、培养或教务相关入口。",
+      "url": "https://gradschool.ustc.edu.cn/column/12",
+      "host": "gradschool.ustc.edu.cn",
+      "logo_url": "https://gradschool.ustc.edu.cn/static/img/favicon.ico"
+    },
+    {
+      "id": 254,
+      "primary": "校园与USTC",
+      "secondary": "研究生系统",
+      "title": "USTC电子证明说明",
+      "desc": "中国科大研究生电子证明与成绩单下载功能说明。",
+      "url": "https://mp.weixin.qq.com/s/VytjlpsOe5sqIsqCnmrBVg",
+      "host": "mp.weixin.qq.com",
+      "logo_url": "https://res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png"
+    },
+    {
+      "id": 255,
+      "primary": "公考与时政",
+      "secondary": "公考报名与资讯",
+      "title": "重庆人社考试报名",
+      "desc": "重庆人社考试报名入口，用于职业考试与招聘考试报名。",
+      "url": "https://ggfw.rlsbj.cq.gov.cn/wsbm/ksbm/bkui/business/webcenter/home/homeChoice.html",
+      "host": "ggfw.rlsbj.cq.gov.cn",
+      "logo_url": "https://ggfw.rlsbj.cq.gov.cn/wsbm/ksbm/bkui/favicon.ico"
+    },
+    {
+      "id": 256,
+      "primary": "公考与时政",
+      "secondary": "公考报名与资讯",
+      "title": "广东事业单位报名系统",
+      "desc": "广东省事业单位公开招聘报名系统，提供考生报名与信息查询。",
+      "url": "https://ggfw.hrss.gd.gov.cn/sydwbk/index.do",
+      "host": "ggfw.hrss.gd.gov.cn",
+      "logo_url": "https://www.google.com/s2/favicons?sz=64&domain_url=https%3A%2F%2Fggfw.hrss.gd.gov.cn%2Fsydwbk%2Findex.do"
+    },
+    {
+      "id": 257,
+      "primary": "公考与时政",
+      "secondary": "公考报名与资讯",
+      "title": "安徽省人事考试网",
+      "desc": "安徽省人事考试网，提供考试公告、报名入口与成绩查询。",
+      "url": "http://www.apta.gov.cn/",
+      "host": "www.apta.gov.cn",
+      "logo_url": "http://www.apta.gov.cn/favicon.ico"
+    },
+    {
+      "id": 258,
+      "primary": "公考与时政",
+      "secondary": "公考报名与资讯",
+      "title": "安徽人事考试网公务员专题",
+      "desc": "安徽省公务员与相关考试专题入口。",
+      "url": "http://www.apta.gov.cn/Officer",
+      "host": "www.apta.gov.cn",
+      "logo_url": "http://www.apta.gov.cn/favicon.ico"
+    },
+    {
+      "id": 259,
+      "primary": "公考与时政",
+      "secondary": "政策与政务",
+      "title": "重庆市人力资源和社会保障局",
+      "desc": "重庆市人社局官网，提供政策公告、办事服务与考试招聘信息。",
+      "url": "https://rlsbj.cq.gov.cn/",
+      "host": "rlsbj.cq.gov.cn",
+      "logo_url": "https://rlsbj.cq.gov.cn/favicon.ico"
+    },
+    {
+      "id": 260,
+      "primary": "考试与证书",
+      "secondary": "官方报名",
+      "title": "中国人事考试网",
+      "desc": "中国人事考试网，提供职业资格考试公告、报名与成绩查询。",
+      "url": "http://www.cpta.com.cn/index.html",
+      "host": "www.cpta.com.cn",
+      "logo_url": "http://www.cpta.com.cn/favicon.ico"
+    },
+    {
+      "id": 261,
+      "primary": "公考与时政",
+      "secondary": "政策与政务",
+      "title": "安徽12333",
+      "desc": "安徽 12333 人社服务平台，提供社保、人事与就业公共服务入口。",
+      "url": "https://m12333.cn/platform/anhui.aspx",
+      "host": "m12333.cn",
+      "logo_url": "https://m12333.cn/favicon.ico"
+    },
+    {
+      "id": 262,
+      "primary": "公考与时政",
+      "secondary": "政策与政务",
+      "title": "人力资源和社会保障部",
+      "desc": "人力资源和社会保障部，公考信息、政策资讯或时政媒体入口。",
+      "url": "https://www.mohrss.gov.cn/SYrlzyhshbzb/fwyd/SYkaoshizhaopin/zyhgjjgsydwgkzp",
+      "host": "mohrss.gov.cn",
+      "logo_url": "https://www.mohrss.gov.cn/favicon.ico"
+    },
+    {
+      "id": 263,
+      "primary": "求职与招聘",
+      "secondary": "行业招聘",
+      "title": "留学人才网",
+      "desc": "留学人才网，面向海归与高层次人才提供招聘信息。",
+      "url": "http://www.liuxuehr.com/index.html",
+      "host": "www.liuxuehr.com",
+      "logo_url": "http://www.liuxuehr.com/favicon.ico"
+    },
+    {
+      "id": 264,
+      "primary": "求职与招聘",
+      "secondary": "行业招聘",
+      "title": "学术桥",
+      "desc": "学术桥，提供高校、科研机构与高层次人才招聘服务。",
+      "url": "https://www.acabridge.cn/",
+      "host": "www.acabridge.cn",
+      "logo_url": "https://www.acabridge.cn/favicon.ico"
+    },
+    {
+      "id": 265,
+      "primary": "求职与招聘",
+      "secondary": "央国企与公共就业",
+      "title": "国家留学人才就业服务平台",
+      "desc": "国家留学人才就业服务平台，聚合央国企与重点单位招聘信息。",
+      "url": "https://lxyc.cscse.edu.cn/index",
+      "host": "lxyc.cscse.edu.cn",
+      "logo_url": "https://www.google.com/s2/favicons?sz=64&domain_url=https%3A%2F%2Flxyc.cscse.edu.cn%2Findex"
+    },
+    {
+      "id": 266,
+      "primary": "求职与招聘",
+      "secondary": "行业招聘",
+      "title": "博士招聘网",
+      "desc": "博士招聘网，提供高校、科研院所与高层次人才招聘信息。",
+      "url": "http://gx.51boshi.net/",
+      "host": "gx.51boshi.net",
+      "logo_url": "http://gx.51boshi.net/favicon.ico"
+    },
+    {
+      "id": 267,
+      "primary": "求职与招聘",
+      "secondary": "行业招聘",
+      "title": "高校人才引进网",
+      "desc": "高校人才引进网，聚合高校人才引进与教师招聘信息。",
+      "url": "https://www.gxrcyj.com/",
+      "host": "www.gxrcyj.com",
+      "logo_url": "https://www.gxrcyj.com/favicon.ico"
+    },
+    {
+      "id": 268,
+      "primary": "求职与招聘",
+      "secondary": "行业招聘",
+      "title": "博士人才政策汇总",
+      "desc": "各地引进博士人才政策汇总，便于查看人才引进与支持政策。",
+      "url": "http://chinazhigui.com/h-nd-3351.html",
+      "host": "chinazhigui.com",
+      "logo_url": "http://22926508.s21i.faiusr.com/5/ABUIABAFGAAg_bKl9gUowPDzxwQwEDgQ.ico"
+    },
+    {
+      "id": 269,
+      "primary": "求职与招聘",
+      "secondary": "行业招聘",
+      "title": "高校人才网每日职位",
+      "desc": "高校人才网每日职位汇总，查看高校与科研岗位更新。",
+      "url": "https://www.gaoxiaojob.com/daily.html",
+      "host": "www.gaoxiaojob.com",
+      "logo_url": "https://www.gaoxiaojob.com/favicon.ico"
+    },
+    {
+      "id": 270,
+      "primary": "求职与招聘",
+      "secondary": "综合招聘",
+      "title": "博士招聘",
+      "desc": "硕博招聘网",
+      "url": "http://www.shuobozhaopin.com/",
+      "host": "shuobozhaopin.com",
+      "logo_url": "http://www.shuobozhaopin.com/favicon.ico"
+    },
+    {
+      "id": 271,
+      "primary": "求职与招聘",
+      "secondary": "行业招聘",
+      "title": "学术桥引才政策",
+      "desc": "学术桥引才政策栏目，汇总各地人才引进政策与资讯。",
+      "url": "https://www.acabridge.cn/yczc/zxzc",
+      "host": "www.acabridge.cn",
+      "logo_url": "https://www.acabridge.cn/favicon.ico"
+    },
+    {
+      "id": 272,
+      "primary": "求职与招聘",
+      "secondary": "校招与实习",
+      "title": "大学生招聘会网",
+      "desc": "大学生招聘会网，汇总全国招聘会、校招与应届生求职信息。",
+      "url": "https://www.zhaopinhui.net/",
+      "host": "www.zhaopinhui.net",
+      "logo_url": "https://www.zhaopinhui.net/favicon.ico"
+    },
+    {
+      "id": 273,
+      "primary": "求职与招聘",
+      "secondary": "央国企与公共就业",
+      "title": "网络招聘会",
+      "desc": "网络招聘会-国家大学生就业服务平台",
+      "url": "https://www.ncss.cn/student/jobfair/jobfairs.html?type=wl",
+      "host": "ncss.cn",
+      "logo_url": "https://t3.chei.com.cn/ncss/favicon.ico"
+    },
+    {
+      "id": 274,
+      "primary": "求职与招聘",
+      "secondary": "央国企与公共就业",
+      "title": "就业在线",
+      "desc": "就业在线，求职招聘、校招实习或就业服务平台。",
+      "url": "https://jobonline.cn/index",
+      "host": "jobonline.cn",
+      "logo_url": "https://www.google.com/s2/favicons?sz=64&domain_url=https%3A%2F%2Fjobonline.cn%2Findex"
+    },
+    {
+      "id": 275,
+      "primary": "求职与招聘",
+      "secondary": "央国企与公共就业",
+      "title": "广东公共求职招聘服务平台",
+      "desc": "广东公共求职招聘服务平台，提供职位检索、招聘活动与就业服务。",
+      "url": "https://ggfw.hrss.gd.gov.cn/recruitment/internet/main",
+      "host": "ggfw.hrss.gd.gov.cn",
+      "logo_url": "https://www.google.com/s2/favicons?sz=64&domain_url=https%3A%2F%2Fggfw.hrss.gd.gov.cn%2Frecruitment%2Finternet%2Fmain"
+    },
+    {
+      "id": 276,
+      "primary": "公考与时政",
+      "secondary": "政策与政务",
+      "title": "中国政府网",
+      "desc": "中国政府网，中央人民政府门户网站，发布政策文件与政务信息。",
+      "url": "https://www.gov.cn/",
+      "host": "www.gov.cn",
+      "logo_url": "https://www.gov.cn/images/trs_favicon.ico"
+    },
+    {
+      "id": 277,
+      "primary": "求职与招聘",
+      "secondary": "央国企与公共就业",
+      "title": "全国就业公共服务平台",
+      "desc": "全国就业公共服务平台，求职招聘、校招实习或就业服务平台。",
+      "url": "https://www.12333.gov.cn/job",
+      "host": "12333.gov.cn",
+      "logo_url": "https://www.google.com/s2/favicons?sz=64&domain_url=https%3A%2F%2Fwww.12333.gov.cn%2Fjob"
     }
   ],
   "templates": {

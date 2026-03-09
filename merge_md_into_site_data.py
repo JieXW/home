@@ -54,9 +54,20 @@ SOURCE_URL_OVERRIDES = {
     "https://hr.leyoujia.com/hr_portal/common/redirect?url=/index": "https://www.leyoujia.com/",
     "https://hr.leyoujia.com/hr_portal/common/redirect?url=%2Findex": "https://www.leyoujia.com/",
     "https://www.douban.com/group/308599/?from=tag_all": "https://www.douban.com/group/308599/",
+    "https://pan.quark.cn/list#/list/all": "https://pan.quark.cn/",
+    "https://pan.baidu.com/disk/main#/index?category=all": "https://pan.baidu.com/",
+    "https://wx.mail.qq.com/home/index?sid=zWtJR4xhOFUukWJ5AFQ1ZQAA#/list/1/1": "https://wx.mail.qq.com/",
+    "https://mail.google.com/mail/u/0/#inbox": "https://mail.google.com/",
+    "https://drive.google.com/drive/home?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto": "https://drive.google.com/drive/my-drive",
+    "http://job.mohrss.gov.cn/202008gx/index.jhtml": "http://job.mohrss.gov.cn/202008gx/index.jhtml",
 }
 
 TITLE_OVERRIDES = {
+    "https://wx.mail.qq.com": "QQ邮箱",
+    "https://mail.google.com": "Gmail",
+    "https://pan.baidu.com": "百度网盘",
+    "https://pan.quark.cn": "夸克网盘",
+    "https://colab.research.google.com": "Google Colab",
     "https://www.58.com/zufang": "58同城租房",
     "http://beijing.ebaixing.com": "北京百姓网",
     "https://bj.fang.ke.com/loupan": "北京贝壳新房",
@@ -79,9 +90,34 @@ TITLE_OVERRIDES = {
     "https://www.mayi.com": "蚂蚁短租",
     "https://www.xiaozhu.com": "小猪短租",
     "https://www.douban.com/group/308599": "豆瓣租房小组",
+    "https://aizex.net": "Aizex 合租面板",
+    "https://mp.weixin.qq.com/s/VytjlpsOe5sqIsqCnmrBVg": "USTC电子证明说明",
+    "https://ggfw.rlsbj.cq.gov.cn/wsbm/ksbm/bkui/business/webcenter/home/homeChoice.html": "重庆人社考试报名",
+    "https://ggfw.hrss.gd.gov.cn/sydwbk/index.do": "广东事业单位报名系统",
+    "http://www.apta.gov.cn": "安徽省人事考试网",
+    "http://www.apta.gov.cn/Officer": "安徽人事考试网公务员专题",
+    "https://rlsbj.cq.gov.cn": "重庆市人力资源和社会保障局",
+    "http://www.cpta.com.cn/index.html": "中国人事考试网",
+    "https://m12333.cn/platform/anhui.aspx": "安徽12333",
+    "http://www.liuxuehr.com/index.html": "留学人才网",
+    "https://www.acabridge.cn": "学术桥",
+    "https://lxyc.cscse.edu.cn/index": "国家留学人才就业服务平台",
+    "http://gx.51boshi.net": "博士招聘网",
+    "https://www.gxrcyj.com": "高校人才引进网",
+    "http://chinazhigui.com/h-nd-3351.html": "博士人才政策汇总",
+    "https://www.gaoxiaojob.com/daily.html": "高校人才网每日职位",
+    "https://www.acabridge.cn/yczc/zxzc": "学术桥引才政策",
+    "https://www.zhaopinhui.net": "大学生招聘会网",
+    "https://ggfw.hrss.gd.gov.cn/recruitment/internet/main": "广东公共求职招聘服务平台",
+    "https://www.gov.cn": "中国政府网",
 }
 
 DESC_OVERRIDES = {
+    "https://wx.mail.qq.com": "QQ邮箱网页版入口，支持收发邮件、管理联系人与附件。",
+    "https://mail.google.com": "Gmail 邮箱网页版入口，用于收发邮件与管理 Google 邮件账户。",
+    "https://pan.baidu.com": "百度网盘，提供文件同步、分享与在线存储服务。",
+    "https://pan.quark.cn": "夸克网盘，提供文件上传、管理、分享与在线存储服务。",
+    "https://colab.research.google.com": "Google Colab，在线运行 Python 和 Jupyter Notebook 的开发平台。",
     "https://www.58.com/zufang": "58同城租房，本地租房、整租与合租房源信息平台。",
     "http://beijing.ebaixing.com": "北京百姓网，北京本地生活与分类信息平台，可查看租房与房产信息。",
     "https://bj.fang.ke.com/loupan": "贝壳北京新房平台，查看楼盘、新房房价与房产资讯。",
@@ -104,6 +140,26 @@ DESC_OVERRIDES = {
     "https://www.mayi.com": "蚂蚁短租，提供民宿、公寓与短租房源预订服务。",
     "https://www.xiaozhu.com": "小猪短租，提供民宿、短租与特色住宿服务。",
     "https://www.douban.com/group/308599": "豆瓣租房小组，提供租房交流与房源信息分享。",
+    "https://aizex.net": "Aizex 合租面板，用于查看和管理合租房源与居住协作信息。",
+    "https://mp.weixin.qq.com/s/VytjlpsOe5sqIsqCnmrBVg": "中国科大研究生电子证明与成绩单下载功能说明。",
+    "https://ggfw.rlsbj.cq.gov.cn/wsbm/ksbm/bkui/business/webcenter/home/homeChoice.html": "重庆人社考试报名入口，用于职业考试与招聘考试报名。",
+    "https://ggfw.hrss.gd.gov.cn/sydwbk/index.do": "广东省事业单位公开招聘报名系统，提供考生报名与信息查询。",
+    "http://www.apta.gov.cn": "安徽省人事考试网，提供考试公告、报名入口与成绩查询。",
+    "http://www.apta.gov.cn/Officer": "安徽省公务员与相关考试专题入口。",
+    "https://rlsbj.cq.gov.cn": "重庆市人社局官网，提供政策公告、办事服务与考试招聘信息。",
+    "http://www.cpta.com.cn/index.html": "中国人事考试网，提供职业资格考试公告、报名与成绩查询。",
+    "https://m12333.cn/platform/anhui.aspx": "安徽 12333 人社服务平台，提供社保、人事与就业公共服务入口。",
+    "http://www.liuxuehr.com/index.html": "留学人才网，面向海归与高层次人才提供招聘信息。",
+    "https://www.acabridge.cn": "学术桥，提供高校、科研机构与高层次人才招聘服务。",
+    "https://lxyc.cscse.edu.cn/index": "国家留学人才就业服务平台，聚合央国企与重点单位招聘信息。",
+    "http://gx.51boshi.net": "博士招聘网，提供高校、科研院所与高层次人才招聘信息。",
+    "https://www.gxrcyj.com": "高校人才引进网，聚合高校人才引进与教师招聘信息。",
+    "http://chinazhigui.com/h-nd-3351.html": "各地引进博士人才政策汇总，便于查看人才引进与支持政策。",
+    "https://www.gaoxiaojob.com/daily.html": "高校人才网每日职位汇总，查看高校与科研岗位更新。",
+    "https://www.acabridge.cn/yczc/zxzc": "学术桥引才政策栏目，汇总各地人才引进政策与资讯。",
+    "https://www.zhaopinhui.net": "大学生招聘会网，汇总全国招聘会、校招与应届生求职信息。",
+    "https://ggfw.hrss.gd.gov.cn/recruitment/internet/main": "广东公共求职招聘服务平台，提供职位检索、招聘活动与就业服务。",
+    "https://www.gov.cn": "中国政府网，中央人民政府门户网站，发布政策文件与政务信息。",
 }
 
 LOGO_OVERRIDES = {
@@ -162,8 +218,25 @@ def fallback_logo(url: str) -> str:
 
 
 def classify_site(build, stable_url: str, title: str) -> tuple[str, str]:
-    if build.host_of(stable_url) in HOUSING_HOSTS:
+    host = build.host_of(stable_url)
+    if host in HOUSING_HOSTS:
         return "生活服务", "租房与房产"
+    if host in {"wx.mail.qq.com", "mail.google.com", "pan.baidu.com", "pan.quark.cn"}:
+        return "常用工具", "云服务与存储"
+    if host in {"colab.research.google.com"}:
+        return "开发与技术", "工具与平台"
+    if host in {"ggfw.rlsbj.cq.gov.cn", "ggfw.hrss.gd.gov.cn", "apta.gov.cn"}:
+        return "公考与时政", "公考报名与资讯"
+    if host in {"rlsbj.cq.gov.cn", "gov.cn", "www.gov.cn", "m12333.cn"}:
+        return "公考与时政", "政策与政务"
+    if host in {"cpta.com.cn"}:
+        return "考试与证书", "官方报名"
+    if host in {"liuxuehr.com", "acabridge.cn", "lxyc.cscse.edu.cn", "gx.51boshi.net", "gxrcyj.com", "zhaopinhui.net"}:
+        return "求职与招聘", "行业招聘" if host != "zhaopinhui.net" else "校招与实习"
+    if stable_url == "https://aizex.net":
+        return "生活服务", "租房与房产"
+    if stable_url == "https://mp.weixin.qq.com/s/VytjlpsOe5sqIsqCnmrBVg":
+        return "校园与USTC", "研究生系统"
     return build.categorize(stable_url, title)
 
 
