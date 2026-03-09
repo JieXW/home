@@ -860,7 +860,14 @@ def build_page(sites: list[Site]) -> str:
     <title>我的网址导航</title>
     <meta name="keywords" content="常用网站,网址导航,WebStack,AI,学术,求职,公考,工具">
     <meta name="description" content="从常用网站.md 自动整理生成的个人网址导航页。">
-    <link rel="shortcut icon" href="./assets/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="icon" type="image/png" sizes="64x64" href="./assets/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="./assets/images/icon-192.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <meta name="theme-color" content="#1f6feb">
+    <meta name="msapplication-TileColor" content="#1f6feb">
+    <meta name="msapplication-TileImage" content="./assets/images/icon-192.png">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Arimo:400,700,400italic">
     <link rel="stylesheet" href="./assets/css/fonts/linecons/css/linecons.css">
     <link rel="stylesheet" href="./assets/css/fonts/fontawesome/css/font-awesome.min.css">
