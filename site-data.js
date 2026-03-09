@@ -1,6 +1,56 @@
 window.SITE_DATA = {
   "sites": [
     {
+      "id": 17,
+      "title": "USTC邮件系统",
+      "desc": "USTC邮件系统",
+      "url": "https://email.ustc.edu.cn/",
+      "host": "email.ustc.edu.cn",
+      "logo_url": "https://email.ustc.edu.cn/favicon.ico",
+      "primary": "常用工具",
+      "secondary": "通用效率"
+    },
+    {
+      "id": 250,
+      "primary": "常用工具",
+      "secondary": "通用效率",
+      "title": "QQ邮箱",
+      "desc": "QQ邮箱",
+      "url": "https://wx.mail.qq.com/home/index?sid=zWtJR4xhOFUukWJ5AFQ1ZQAA#/list/1/1",
+      "host": "example.com",
+      "logo_url": "https://wx.mail.qq.com/home/index?sid=zWtJR4xhOFUukWJ5AFQ1ZQAA#/list/1/1"
+    },
+    {
+      "id": 251,
+      "primary": "常用工具",
+      "secondary": "通用效率",
+      "title": "Gmail",
+      "desc": "Gmail",
+      "url": "https://mail.google.com/mail/u/0/#inbox",
+      "host": "example.com",
+      "logo_url": "https://mail.google.com/mail/u/0/#inbox"
+    },
+    {
+      "id": 24,
+      "title": "USTC校友邮箱",
+      "desc": "USTC校友邮箱",
+      "url": "https://mail.ustc.edu/",
+      "host": "mail.ustc.edu",
+      "logo_url": "https://mail.ustc.edu/favicon.ico",
+      "primary": "常用工具",
+      "secondary": "通用效率"
+    },
+    {
+      "id": 249,
+      "primary": "开发与技术",
+      "secondary": "工具与平台",
+      "title": "Colab",
+      "desc": "Colab",
+      "url": "https://colab.research.google.com/",
+      "host": "example.com",
+      "logo_url": "https://colab.research.google.com/"
+    },
+    {
       "id": 220,
       "primary": "常用工具",
       "secondary": "通用效率",
@@ -9,6 +59,106 @@ window.SITE_DATA = {
       "url": "https://dida365.com/webapp/#q/all/tasks",
       "host": "example.com",
       "logo_url": "https://dida365.com/webapp/#q/all/tasks"
+    },
+    {
+      "id": 129,
+      "title": "飞书",
+      "desc": "飞书文档",
+      "url": "https://my.feishu.cn/drive/home",
+      "host": "my.feishu.cn",
+      "logo_url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQnSURBVHgB7ZpbaBRnFMf/s5uYbMnUZJOm2U01K1kThBUSg4VSvKTQG1ja9E2FolLsU1Ha0pdSTJ7ah5Sq4IMK3l58ULzgHRE3iCCKJKAi3sjES6LRjdlsTLK6Zj1nZ9fbZrPzfd9GM+IPzs7sXM//fN+ZM/PNaEgSj8eLabKKbGHSJiMdZGs1TdueWqDxDznvo8lJMh/sgUHWSEKMlIBO2Mf5FAZZvZOcX0Yzy2A/uMtHNRLQTjN1sCdBFhCHjXHA5theQJ7IxvsivdhPpkpdoY5V7irkAiEBP+jl6IhG0HL/BpQIU0UaiWCrNwBVhLtQc1k1/q+oRbFDSHsa28LdWNfXBVWkr0Icwabb7TCejECWYmceOv3zlYIhncTcj09WzYUvvxCy9D+NoaX3OlRQrgPGk2E0dp1TaolO/zwKhAsyKF9G+cSqLaGSCzmpA6oiOKH7R2OQIWeFjEXs/aReKiE5FzqGByDDmDlwnvKqwQ8ptoXvYHn3JYjS5CzDz/fcON3eg4HBKG7eHUwsD/hLMd2j4/M6DwIzS9P2G1PALxtMASu/hhTND25YLnZ5V0bgOjGA/KtRaEOj4247rULHjn++xGz/CyEZ23vTUXMqI4KLXdujPgSHHmbchp11HQgnnLfK1KL8V5xnxs0BFrHpGKTg24RM+eAIxTC19Z6Q89Mqiij6X6UfK9uOLOKPLUBkGEJwUq8pr04/YdJ55+3HEOHPFQ2YTl0o7XhWdg5eAJa2Aj19EGJ1SRUWflDy4mRJ53kqAkd/8bc1Y66zfBnt7jOT++BZCJHqSrLOMxz9TAjVARbRvBP4b5/1LsVd6bd4pbTz40WfkSpkO9vMLmWlNS5cD2HP3+1SzjPjRZ+RrsSp1mDLlBsbd13E978ewq27EciQLfqM2lMJzFZgW/Qp5QjVDI8bVEUj+Gv9GRw5ZUCFbNFnlAWkSAmZNyuKw4ePIxQKQYXaWYGs0WdyPipx6nIB9Bk/osy3AIW6BzKUe3zY/e9nlrbNWQu8TlFZTcJiNAigDV3DUL+RtVUcziko9jZg9U+BRFe0woQJeH6CAqqeBXOgl8zBR9UR9PZ0IT/WjYfhQYw+NavxFJebWsuLotKZWPpFAVZ+I3B8vEFGRnV8+DEPpQTgqkxf/91c4PcmCDFpRubY+TVLIMyYLaDLPV9Lw7fsIt3mZfIyHfDqHbNYTSQcqNYV8k9/TMZhFXZ+M91KHziHCWHxfDPqqq2ddVwol0LY2UXU15csgOXLZDYsD2yxEH7Y52p7XmBsl52u8dJrz9nm7Uau80t6ZI7FcJ7wbfXrueJ1mxGurTSnE3lReP+K6W3zTggIwr50sIA22Je1WvIjD37Z7YO9MDRNm+Ggn3760wjz2wO7YMD02UzixFcfpIZml8P8pGWyEiRrIatnn3nBM86xc8I2LjziAAAAAElFTkSuQmCC",
+      "primary": "常用工具",
+      "secondary": "通用效率"
+    },
+    {
+      "id": 2,
+      "title": "超级简历WonderCV",
+      "desc": "智能简历制作工具",
+      "url": "https://www.wondercv.com/cvs",
+      "host": "wondercv.com",
+      "logo_url": "https://logo.wondercv.com/favicon.ico",
+      "primary": "常用工具",
+      "secondary": "通用效率"
+    },
+    {
+      "id": 180,
+      "title": "今日热榜",
+      "desc": "各大平台热搜榜",
+      "url": "https://tophub.today/c/news",
+      "host": "tophub.today",
+      "logo_url": "https://tophub.today/favicon.ico",
+      "primary": "常用工具",
+      "secondary": "通用效率"
+    },
+    {
+      "id": 122,
+      "title": "菜鸟工具",
+      "desc": "在线工具合集",
+      "url": "https://www.jyshare.com/",
+      "host": "jyshare.com",
+      "logo_url": "https://static.jyshare.com/images/c-runoob-logo.ico",
+      "primary": "常用工具",
+      "secondary": "通用效率"
+    },
+    {
+      "id": 5,
+      "title": "在线工具",
+      "desc": "在线工具合集",
+      "url": "https://tool.lu/tool",
+      "host": "tool.lu",
+      "logo_url": "https://tool.lu/favicon.ico",
+      "primary": "常用工具",
+      "secondary": "通用效率"
+    },
+    {
+      "id": 7,
+      "title": "阿里云 OSS",
+      "desc": "阿里云 OSS，云服务、控制台或在线存储入口。",
+      "url": "https://oss.console.aliyun.com/overview",
+      "host": "oss.console.aliyun.com",
+      "logo_url": "https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico",
+      "primary": "常用工具",
+      "secondary": "云服务与存储"
+    },
+    {
+      "id": 6,
+      "title": "腾讯云 COS",
+      "desc": "腾讯云 COS，云服务、控制台或在线存储入口。",
+      "url": "https://console.cloud.tencent.com/cos",
+      "host": "console.cloud.tencent.com",
+      "logo_url": "https://cloudcache.tencent-cloud.com/qcloud/favicon.ico",
+      "primary": "常用工具",
+      "secondary": "云服务与存储"
+    },
+    {
+      "id": 247,
+      "primary": "常用工具",
+      "secondary": "云服务与存储",
+      "title": "百度网盘",
+      "desc": "百度网盘",
+      "url": "https://pan.baidu.com/disk/main#/index?category=all",
+      "host": "example.com",
+      "logo_url": "https://pan.baidu.com/disk/main#/index?category=all"
+    },
+    {
+      "id": 246,
+      "primary": "常用工具",
+      "secondary": "云服务与存储",
+      "title": "夸克网盘",
+      "desc": "夸克网盘",
+      "url": "https://pan.quark.cn/list#/list/all",
+      "host": "example.com",
+      "logo_url": "https://pan.quark.cn/list#/list/all"
+    },
+    {
+      "id": 248,
+      "primary": "常用工具",
+      "secondary": "云服务与存储",
+      "title": "Google云盘",
+      "desc": "Google云盘",
+      "url": "https://drive.google.com/drive/home?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto",
+      "host": "example.com",
+      "logo_url": "https://drive.google.com/drive/home?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto"
     },
     {
       "id": 218,
@@ -91,56 +241,6 @@ window.SITE_DATA = {
       "logo_url": "http://www.ielts.org/"
     },
     {
-      "id": 180,
-      "title": "今日热榜",
-      "desc": "今日热榜，公考信息、政策资讯或时政媒体入口。",
-      "url": "https://tophub.today/c/news",
-      "host": "tophub.today",
-      "logo_url": "https://tophub.today/favicon.ico",
-      "primary": "常用工具",
-      "secondary": "通用效率"
-    },
-    {
-      "id": 129,
-      "title": "飞书",
-      "desc": "飞书，云服务、控制台或在线存储入口。",
-      "url": "https://my.feishu.cn/drive/home",
-      "host": "my.feishu.cn",
-      "logo_url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQnSURBVHgB7ZpbaBRnFMf/s5uYbMnUZJOm2U01K1kThBUSg4VSvKTQG1ja9E2FolLsU1Ha0pdSTJ7ah5Sq4IMK3l58ULzgHRE3iCCKJKAi3sjES6LRjdlsTLK6Zj1nZ9fbZrPzfd9GM+IPzs7sXM//fN+ZM/PNaEgSj8eLabKKbGHSJiMdZGs1TdueWqDxDznvo8lJMh/sgUHWSEKMlIBO2Mf5FAZZvZOcX0Yzy2A/uMtHNRLQTjN1sCdBFhCHjXHA5theQJ7IxvsivdhPpkpdoY5V7irkAiEBP+jl6IhG0HL/BpQIU0UaiWCrNwBVhLtQc1k1/q+oRbFDSHsa28LdWNfXBVWkr0Icwabb7TCejECWYmceOv3zlYIhncTcj09WzYUvvxCy9D+NoaX3OlRQrgPGk2E0dp1TaolO/zwKhAsyKF9G+cSqLaGSCzmpA6oiOKH7R2OQIWeFjEXs/aReKiE5FzqGByDDmDlwnvKqwQ8ptoXvYHn3JYjS5CzDz/fcON3eg4HBKG7eHUwsD/hLMd2j4/M6DwIzS9P2G1PALxtMASu/hhTND25YLnZ5V0bgOjGA/KtRaEOj4247rULHjn++xGz/CyEZ23vTUXMqI4KLXdujPgSHHmbchp11HQgnnLfK1KL8V5xnxs0BFrHpGKTg24RM+eAIxTC19Z6Q89Mqiij6X6UfK9uOLOKPLUBkGEJwUq8pr04/YdJ55+3HEOHPFQ2YTl0o7XhWdg5eAJa2Aj19EGJ1SRUWflDy4mRJ53kqAkd/8bc1Y66zfBnt7jOT++BZCJHqSrLOMxz9TAjVARbRvBP4b5/1LsVd6bd4pbTz40WfkSpkO9vMLmWlNS5cD2HP3+1SzjPjRZ+RrsSp1mDLlBsbd13E978ewq27EciQLfqM2lMJzFZgW/Qp5QjVDI8bVEUj+Gv9GRw5ZUCFbNFnlAWkSAmZNyuKw4ePIxQKQYXaWYGs0WdyPipx6nIB9Bk/osy3AIW6BzKUe3zY/e9nlrbNWQu8TlFZTcJiNAigDV3DUL+RtVUcziko9jZg9U+BRFe0woQJeH6CAqqeBXOgl8zBR9UR9PZ0IT/WjYfhQYw+NavxFJebWsuLotKZWPpFAVZ+I3B8vEFGRnV8+DEPpQTgqkxf/91c4PcmCDFpRubY+TVLIMyYLaDLPV9Lw7fsIt3mZfIyHfDqHbNYTSQcqNYV8k9/TMZhFXZ+M91KHziHCWHxfDPqqq2ddVwol0LY2UXU15csgOXLZDYsD2yxEH7Y52p7XmBsl52u8dJrz9nm7Uau80t6ZI7FcJ7wbfXrueJ1mxGurTSnE3lReP+K6W3zTggIwr50sIA22Je1WvIjD37Z7YO9MDRNm+Ggn3760wjz2wO7YMD02UzixFcfpIZml8P8pGWyEiRrIatnn3nBM86xc8I2LjziAAAAAElFTkSuQmCC",
-      "primary": "常用工具",
-      "secondary": "通用效率"
-    },
-    {
-      "id": 122,
-      "title": "菜鸟工具",
-      "desc": "在线工具合集",
-      "url": "https://www.jyshare.com/",
-      "host": "jyshare.com",
-      "logo_url": "https://static.jyshare.com/images/c-runoob-logo.ico",
-      "primary": "常用工具",
-      "secondary": "通用效率"
-    },
-    {
-      "id": 5,
-      "title": "在线工具",
-      "desc": "在线工具合集",
-      "url": "https://tool.lu/tool",
-      "host": "tool.lu",
-      "logo_url": "https://tool.lu/favicon.ico",
-      "primary": "常用工具",
-      "secondary": "通用效率"
-    },
-    {
-      "id": 2,
-      "title": "超级简历WonderCV",
-      "desc": "超级简历WonderCV - HR推荐简历模板,智能简历制作工具,专业中英文简历模板免费下载",
-      "url": "https://www.wondercv.com/cvs",
-      "host": "wondercv.com",
-      "logo_url": "https://logo.wondercv.com/favicon.ico",
-      "primary": "常用工具",
-      "secondary": "通用效率"
-    },
-    {
       "id": 1,
       "title": "Greasy Fork",
       "desc": "Greasy Fork - 安全且实用的用户脚本站",
@@ -181,29 +281,9 @@ window.SITE_DATA = {
       "secondary": "通用效率"
     },
     {
-      "id": 7,
-      "title": "阿里云 OSS",
-      "desc": "阿里云 OSS，云服务、控制台或在线存储入口。",
-      "url": "https://oss.console.aliyun.com/overview",
-      "host": "oss.console.aliyun.com",
-      "logo_url": "https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico",
-      "primary": "常用工具",
-      "secondary": "云服务与存储"
-    },
-    {
-      "id": 6,
-      "title": "腾讯云 COS",
-      "desc": "腾讯云 COS，云服务、控制台或在线存储入口。",
-      "url": "https://console.cloud.tencent.com/cos",
-      "host": "console.cloud.tencent.com",
-      "logo_url": "https://cloudcache.tencent-cloud.com/qcloud/favicon.ico",
-      "primary": "常用工具",
-      "secondary": "云服务与存储"
-    },
-    {
       "id": 21,
       "title": "小木虫论坛",
-      "desc": "小木虫论坛，科研社区、论坛或学术资源站。",
+      "desc": "科研社区、论坛或学术资源站。",
       "url": "https://muchong.com/bbs",
       "host": "muchong.com",
       "logo_url": "https://muchongimg.xmcimg.com/data/emuch_bbs_images/favicon.ico",
@@ -213,7 +293,7 @@ window.SITE_DATA = {
     {
       "id": 8,
       "title": "Paper2X网址导航",
-      "desc": "paper2x学术科研导航",
+      "desc": "学术科研导航",
       "url": "https://paper2x.noedgeai.com/",
       "host": "paper2x.noedgeai.com",
       "logo_url": "https://paper2x.noedgeai.com/apple-touch-icon.png",
@@ -263,7 +343,7 @@ window.SITE_DATA = {
     {
       "id": 109,
       "title": "清华大学研究生招生网",
-      "desc": "简章目录-清华研究生招生网",
+      "desc": "清华研究生招生网",
       "url": "https://yz.tsinghua.edu.cn/index.htm",
       "host": "yz.tsinghua.edu.cn",
       "logo_url": "https://yz.tsinghua.edu.cn/favicon.ico",
@@ -381,26 +461,6 @@ window.SITE_DATA = {
       "secondary": "校园服务"
     },
     {
-      "id": 17,
-      "title": "USTC邮件系统",
-      "desc": "USTC邮件系统",
-      "url": "https://email.ustc.edu.cn/",
-      "host": "email.ustc.edu.cn",
-      "logo_url": "https://email.ustc.edu.cn/favicon.ico",
-      "primary": "校园与USTC",
-      "secondary": "校园服务"
-    },
-    {
-      "id": 24,
-      "title": "USTC校友邮箱",
-      "desc": "USTC校友邮箱",
-      "url": "https://mail.ustc.edu/",
-      "host": "mail.ustc.edu",
-      "logo_url": "https://mail.ustc.edu/favicon.ico",
-      "primary": "校园与USTC",
-      "secondary": "校园服务"
-    },
-    {
       "id": 19,
       "title": "USTC制本厂",
       "desc": "USTC制本厂",
@@ -413,7 +473,7 @@ window.SITE_DATA = {
     {
       "id": 167,
       "title": "公考雷达",
-      "desc": "公考雷达职位详情，公考信息、政策资讯",
+      "desc": "职位详情，公考信息、政策资讯",
       "url": "https://www.gongkaoleida.com/",
       "host": "gongkaoleida.com",
       "logo_url": "https://www.gongkaoleida.com/favicon.ico",
@@ -423,7 +483,7 @@ window.SITE_DATA = {
     {
       "id": 183,
       "title": "QZZN论坛",
-      "desc": "QZZN论坛 公务员考试论坛 公务员论坛 公考论坛",
+      "desc": "公务员考试论坛 公务员论坛 公考论坛",
       "url": "https://bbs.qzzn.com/",
       "host": "bbs.qzzn.com",
       "logo_url": "https://bbs.qzzn.com/favicon.ico",
@@ -521,16 +581,6 @@ window.SITE_DATA = {
       "secondary": "通用效率"
     },
     {
-      "id": 34,
-      "title": "Google 云端硬盘",
-      "desc": "Google 云端硬盘，云服务、控制台或在线存储入口。",
-      "url": "https://drive.google.com/drive/my-drive",
-      "host": "drive.google.com",
-      "logo_url": "https://accounts.google.com/favicon.ico",
-      "primary": "常用工具",
-      "secondary": "云服务与存储"
-    },
-    {
       "id": 35,
       "title": "SMS",
       "desc": "SMS国外手机号接码平台",
@@ -613,7 +663,7 @@ window.SITE_DATA = {
     {
       "id": 59,
       "title": "CoPaw",
-      "desc": "CoPaw - Works for you, grows with you.",
+      "desc": "CoPaw，自己的云上openclaw",
       "url": "https://copaw.agentscope.io/docs/quickstart",
       "host": "copaw.agentscope.io",
       "logo_url": "https://copaw.agentscope.io/copaw-symbol.svg",
@@ -662,8 +712,8 @@ window.SITE_DATA = {
     },
     {
       "id": 42,
-      "title": "scispace",
-      "desc": "scispace科研AI工具，文献搜集与写作",
+      "title": "Scispace",
+      "desc": "科研AI工具，文献搜集与写作",
       "url": "https://scispace.com/",
       "host": "typeset.io",
       "logo_url": "https://scispace.com:443/favicon.ico",
@@ -823,7 +873,7 @@ window.SITE_DATA = {
     {
       "id": 49,
       "title": "DeepSeek",
-      "desc": "DeepSeek，通用 AI 对话或助手服务。",
+      "desc": "普通AI，不常用",
       "url": "https://chat.deepseek.com/",
       "host": "chat.deepseek.com",
       "logo_url": "https://cdn.deepseek.com/chat/icon.png",
@@ -833,7 +883,7 @@ window.SITE_DATA = {
     {
       "id": 52,
       "title": "秘塔AI搜索",
-      "desc": "秘塔AI搜索，AI 工具导航或发现平台。",
+      "desc": "中文AI搜索最好用",
       "url": "https://metaso.cn/",
       "host": "metaso.cn",
       "logo_url": "https://metaso.cn/apple-touch-icon.png",
@@ -853,7 +903,7 @@ window.SITE_DATA = {
     {
       "id": 51,
       "title": "腾讯元宝",
-      "desc": "腾讯元宝，通用 AI 对话或助手服务。",
+      "desc": "一般，但审查不严，嵌入ima",
       "url": "https://yuanbao.tencent.com/",
       "host": "yuanbao.tencent.com",
       "logo_url": "https://static.yuanbao.tencent.com/m/yuanbao-web/favicon@32.png",
@@ -863,7 +913,7 @@ window.SITE_DATA = {
     {
       "id": 115,
       "title": "文心一言",
-      "desc": "文心一言，通用 AI 对话或助手服务。",
+      "desc": "难用",
       "url": "https://yiyan.baidu.com/",
       "host": "yiyan.baidu.com",
       "logo_url": "https://eb-static.cdn.bcebos.com/logo/favicon.ico",
@@ -893,7 +943,7 @@ window.SITE_DATA = {
     {
       "id": 54,
       "title": "Git",
-      "desc": "Git - Install for Windows",
+      "desc": "Git",
       "url": "https://git-scm.com/install/windows",
       "host": "git-scm.com",
       "logo_url": "https://git-scm.com/favicon.ico",
@@ -903,7 +953,7 @@ window.SITE_DATA = {
     {
       "id": 57,
       "title": "智谱GLM AI开放平台",
-      "desc": "智谱AI开放平台，AI 平台、控制台或开发工具。",
+      "desc": "智谱GLM AI开放平台",
       "url": "https://bigmodel.cn/",
       "host": "bigmodel.cn",
       "logo_url": "https://bigmodel.cn/img/icons/apple-touch-icon-152x152.png",
@@ -934,7 +984,7 @@ window.SITE_DATA = {
       "id": 217,
       "primary": "AI与Agent",
       "secondary": "平台与开发",
-      "title": "codebuddy",
+      "title": "Codebuddy",
       "desc": "基于腾讯云 AI 技术的智能编程工具",
       "url": "https://www.codebuddy.ai/docs/zh/ide/Introduction",
       "host": "example.com",
@@ -943,7 +993,7 @@ window.SITE_DATA = {
     {
       "id": 64,
       "title": "OpenCode",
-      "desc": "OpenCode | 开源 AI 编程代理",
+      "desc": "开源 AI 编程代理",
       "url": "https://opencode.ai/",
       "host": "opencode.ai",
       "logo_url": "https://opencode.ai/apple-touch-icon-v3.png",
@@ -963,7 +1013,7 @@ window.SITE_DATA = {
     {
       "id": 61,
       "title": "稀土掘金",
-      "desc": "稀土掘金，开发学习、技术社区或工程工具。",
+      "desc": "技术社区",
       "url": "https://juejin.cn/",
       "host": "juejin.cn",
       "logo_url": "https://lf-web-assets.juejin.cn/obj/juejin-web/xitu_juejin_web/static/favicons/apple-touch-icon.png",
@@ -993,7 +1043,7 @@ window.SITE_DATA = {
     {
       "id": 68,
       "title": "wwPDB: Worldwide Protein Data Bank",
-      "desc": "wwPDB: Worldwide Protein Data Bank，生物信息、结构数据库或分子模拟资源。",
+      "desc": "生物信息、结构数据库或分子模拟资源。",
       "url": "https://www.wwpdb.org/",
       "host": "wwpdb.org",
       "logo_url": "https://www.wwpdb.org/favicon.ico",
@@ -1002,8 +1052,8 @@ window.SITE_DATA = {
     },
     {
       "id": 69,
-      "title": "RCSB PDB: Homepage",
-      "desc": "RCSB PDB: Homepage，生物信息、结构数据库或分子模拟资源。",
+      "title": "RCSB PDB",
+      "desc": "生物信息、结构数据库或分子模拟资源。",
       "url": "https://www.rcsb.org/",
       "host": "rcsb.org",
       "logo_url": "https://www.rcsb.org/img/rcsb-apple-touch-icon.jpg",
@@ -1013,7 +1063,7 @@ window.SITE_DATA = {
     {
       "id": 71,
       "title": "Jerkwin",
-      "desc": "Jerkwin",
+      "desc": "Jerkwin MD模拟，中文gromacs手册",
       "url": "https://jerkwin.github.io/",
       "host": "jerkwin.github.io",
       "logo_url": "data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAD/APr59wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIiIiIiIiAAAiIiIiIiIAACIiIiIiIgERERERERIiAREREREREiIBERERERESIgERIiIiERIiAREiIiIREiIBESIhERESIgERIiERERIiAREiIiIiIiIBESIiIiIiIgERIiIiIiIiAREREREREAABEREREREQAAERERERERAADgAQAA4AEAAOABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAA8AAAAPAAAADwAA",
@@ -1023,7 +1073,7 @@ window.SITE_DATA = {
     {
       "id": 72,
       "title": "MD Tutorials",
-      "desc": "MD Tutorials，生物信息、结构数据库或分子模拟资源。",
+      "desc": "MD 教程",
       "url": "http://www.mdtutorials.com/",
       "host": "mdtutorials.com",
       "logo_url": "http://www.mdtutorials.com/favicon.ico",
@@ -1033,7 +1083,7 @@ window.SITE_DATA = {
     {
       "id": 73,
       "title": "微信读书",
-      "desc": "微信读书，内容社区、阅读或知识服务站点。",
+      "desc": "微信读书",
       "url": "https://weread.qq.com/web/shelf",
       "host": "weread.qq.com",
       "logo_url": "https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/appleTouchIcon/apple-touch-icon-57x57.png",
@@ -1043,7 +1093,7 @@ window.SITE_DATA = {
     {
       "id": 82,
       "title": "LibreTexts",
-      "desc": "LibreTexts理科在线学习图书馆",
+      "desc": "理科在线学习图书馆",
       "url": "https://one.libretexts.org/home",
       "host": "phys.libretexts.org",
       "logo_url": "https://one.libretexts.org/assets/static/libretexts_logo.V0YDUgSr.png",
@@ -1053,7 +1103,7 @@ window.SITE_DATA = {
     {
       "id": 74,
       "title": "计算化学公社",
-      "desc": "计算化学公社，科研社区、论坛或学术资源站。",
+      "desc": "科研社区、论坛或学术资源站。",
       "url": "http://bbs.keinsci.com/forum.php",
       "host": "bbs.keinsci.com",
       "logo_url": "https://www.google.com/s2/favicons?sz=64&domain_url=http%3A%2F%2Fbbs.keinsci.com%2Fforum.php",
@@ -1073,7 +1123,7 @@ window.SITE_DATA = {
     {
       "id": 77,
       "title": "CNKI翻译助手",
-      "desc": "CNKI翻译助手，写作、翻译或参考文献相关工具。",
+      "desc": "写作、翻译或参考文献相关工具。",
       "url": "https://dict.cnki.net/index#",
       "host": "dict.cnki.net",
       "logo_url": "https://dict.cnki.net/favicon.ico",
@@ -1083,7 +1133,7 @@ window.SITE_DATA = {
     {
       "id": 80,
       "title": "ResearchGate",
-      "desc": "ResearchGate科研论坛",
+      "desc": "科研论坛",
       "url": "https://www.researchgate.net/",
       "host": "researchgate.net",
       "logo_url": "https://www.researchgate.net/favicon.ico",
@@ -1103,7 +1153,7 @@ window.SITE_DATA = {
     {
       "id": 83,
       "title": "欧路词典",
-      "desc": "欧路在线词典，每日英语听力，内容社区、阅读或知识服务站点。",
+      "desc": "欧路词典，每日英语听力",
       "url": "https://my.eudic.net/",
       "host": "my.eudic.net",
       "logo_url": "https://dict.eudic.net/Images/en/apple_icon.png",
@@ -1113,7 +1163,7 @@ window.SITE_DATA = {
     {
       "id": 84,
       "title": "火龙果",
-      "desc": "火龙果，英语阅读写作",
+      "desc": "英语阅读写作",
       "url": "https://web.mypitaya.com/works",
       "host": "web.mypitaya.com",
       "logo_url": "https://web.mypitaya.com/favicon.ico",
@@ -1163,7 +1213,7 @@ window.SITE_DATA = {
     {
       "id": 91,
       "title": "Stack Overflow",
-      "desc": "Stack Overflow，开发学习、技术社区或工程工具。",
+      "desc": "技术社区",
       "url": "https://stackoverflow.com/",
       "host": "stackoverflow.com",
       "logo_url": "https://stackoverflow.com/Content/Sites/stackoverflow/Img/apple-touch-icon.png?v=9168b8ec82a5",
@@ -1203,7 +1253,7 @@ window.SITE_DATA = {
     {
       "id": 95,
       "title": "GitHub",
-      "desc": "GitHub · Change is constant. GitHub keeps you ahead. · GitHub",
+      "desc": "开源代码仓库",
       "url": "https://github.com/",
       "host": "github.com",
       "logo_url": "https://github.com/fluidicon.png",
@@ -1293,7 +1343,7 @@ window.SITE_DATA = {
     {
       "id": 113,
       "title": "Z-Library",
-      "desc": "Z-Library 在线免费图书馆",
+      "desc": "在线免费图书馆",
       "url": "https://z-lib.cv/",
       "host": "z-lib.cv",
       "logo_url": "https://z-lib.cv/apple-touch-icon.png?v=1",
@@ -1323,7 +1373,7 @@ window.SITE_DATA = {
     {
       "id": 120,
       "title": "CHARMM-GUI",
-      "desc": "CHARMM-GUI",
+      "desc": "CHARMM-GUI膜蛋白建模",
       "url": "https://www.charmm-gui.org/",
       "host": "charmm-gui.org",
       "logo_url": "https://www.charmm-gui.org/favicon.ico",
@@ -1333,7 +1383,7 @@ window.SITE_DATA = {
     {
       "id": 121,
       "title": "MacKerell Lab",
-      "desc": "MacKerell Lab，生物信息、结构数据库或分子模拟资源。",
+      "desc": "CHARMM力场开发组",
       "url": "https://mackerell.umaryland.edu/charmm_ff.shtml",
       "host": "mackerell.umaryland.edu",
       "logo_url": "https://mackerell.umaryland.edu/img/logo-umd.png",
@@ -1353,7 +1403,7 @@ window.SITE_DATA = {
     {
       "id": 126,
       "title": "COSMIC",
-      "desc": "COSMIC，生物信息、结构数据库或分子模拟资源。",
+      "desc": "公开的模拟轨迹服务器",
       "url": "https://cancer.sanger.ac.uk/cosmic",
       "host": "cancer.sanger.ac.uk",
       "logo_url": "https://cancer.sanger.ac.uk/images/favicons/apple-touch-icon-57x57.png",
@@ -1821,6 +1871,26 @@ window.SITE_DATA = {
       "secondary": "通用效率"
     },
     {
+      "id": 244,
+      "primary": "常用工具",
+      "secondary": "通用效率",
+      "title": "TAG",
+      "desc": "TAG梯子",
+      "url": "https://tagss.pro/#/home",
+      "host": "example.com",
+      "logo_url": "https://tagss.pro/#/home"
+    },
+    {
+      "id": 245,
+      "primary": "常用工具",
+      "secondary": "通用效率",
+      "title": "WestData",
+      "desc": "WestData梯子",
+      "url": "https://wd-gold.net/cart.php",
+      "host": "example.com",
+      "logo_url": "https://wd-gold.net/cart.php"
+    },
+    {
       "id": 182,
       "title": "学信网",
       "desc": "学信网",
@@ -1903,7 +1973,7 @@ window.SITE_DATA = {
     {
       "id": 166,
       "title": "国家公务员局报名系统",
-      "desc": "国家公务员局报名系统，公考信息、遴选和选调，政策资讯",
+      "desc": "公考信息、遴选和选调，政策资讯",
       "url": "http://bm.scs.gov.cn/pp/gkweb/core/web/ui/business/home/gkhome.html",
       "host": "bm.scs.gov.cn",
       "logo_url": "http://bm.scs.gov.cn/favicon.ico",
@@ -1989,6 +2059,226 @@ window.SITE_DATA = {
       "logo_url": "https://www.daad.de/favicon.ico",
       "primary": "招生与深造",
       "secondary": "海外PhD与奖学金"
+    },
+    {
+      "id": 221,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "58同城租房",
+      "desc": "58同城租房，本地租房、整租与合租房源信息平台。",
+      "url": "https://www.58.com/zufang",
+      "host": "58.com",
+      "logo_url": "https://www.58.com/favicon.ico"
+    },
+    {
+      "id": 222,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "百姓网",
+      "desc": "北京百姓网，北京本地生活与分类信息平台，可查看租房与房产信息。",
+      "url": "http://beijing.ebaixing.com/",
+      "host": "beijing.ebaixing.com",
+      "logo_url": "http://www.ebaixing.com/favicon.ico"
+    },
+    {
+      "id": 223,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "贝壳",
+      "desc": "贝壳北京新房平台，查看楼盘、新房房价与房产资讯。",
+      "url": "https://bj.fang.ke.com/loupan",
+      "host": "bj.fang.ke.com",
+      "logo_url": "https://bj.fang.ke.com/favicon.ico"
+    },
+    {
+      "id": 224,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "链家",
+      "desc": "链家合肥站，提供租房、二手房与房产信息服务。",
+      "url": "https://hf.lianjia.com/",
+      "host": "hf.lianjia.com",
+      "logo_url": "https://hf.lianjia.com/favicon.ico"
+    },
+    {
+      "id": 225,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "安居客",
+      "desc": "安居客北京站，提供租房、二手房与新房信息。",
+      "url": "https://m.anjuke.com/bj",
+      "host": "m.anjuke.com",
+      "logo_url": "https://m.anjuke.com/favicon.ico"
+    },
+    {
+      "id": 226,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "自如",
+      "desc": "自如，提供整租、合租与公寓租住服务。",
+      "url": "https://www.ziroom.com/",
+      "host": "ziroom.com",
+      "logo_url": "https://www.ziroom.com/favicon.ico"
+    },
+    {
+      "id": 227,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "房天下",
+      "desc": "房天下深圳站，提供新房、二手房、租房与房产资讯服务。",
+      "url": "https://sz.fang.com/",
+      "host": "sz.fang.com",
+      "logo_url": "https://static.soufunimg.com/homepage/favicon.ico"
+    },
+    {
+      "id": 228,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "Q房网",
+      "desc": "Q房网，提供新房、二手房、租房与房产交易信息。",
+      "url": "https://www.qfang.com/index.html",
+      "host": "qfang.com",
+      "logo_url": "https://www.qfang.com/themes/default/images/favicon.ico"
+    },
+    {
+      "id": 230,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "中原找房",
+      "desc": "中原找房合肥站，提供租房、二手房与房产信息服务。",
+      "url": "https://hf.centanet.com/",
+      "host": "hf.centanet.com",
+      "logo_url": "https://www.google.com/s2/favicons?sz=64&domain_url=https%3A%2F%2Fhf.centanet.com%2F"
+    },
+    {
+      "id": 231,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "魔方公寓",
+      "desc": "魔方公寓，提供长租公寓与公寓租住服务。",
+      "url": "https://www.52mf.com/",
+      "host": "52mf.com",
+      "logo_url": "https://www.52mf.com/favicon.ico"
+    },
+    {
+      "id": 232,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "巴乐兔",
+      "desc": "巴乐兔租房平台，提供城市租房、整租与合租房源信息。",
+      "url": "https://www.baletu.com/",
+      "host": "baletu.com",
+      "logo_url": "https://js.baletoo.cn/static/pc/images/favicon.ico?201812"
+    },
+    {
+      "id": 233,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "诸葛找房",
+      "desc": "诸葛找房天津站，提供新房、二手房、租房与房价信息。",
+      "url": "https://tj.zhuge.com/",
+      "host": "tj.zhuge.com",
+      "logo_url": "https://zgsta.zhuge.com/static/common/images/commonLogo/favicon.ico"
+    },
+    {
+      "id": 234,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "自如友家",
+      "desc": "深圳租房平台，提供直租、整租与合租房源信息。",
+      "url": "https://sz.zufun.cn/",
+      "host": "sz.zufun.cn",
+      "logo_url": "https://sz.zufun.cn/favicon.ico"
+    },
+    {
+      "id": 235,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "我爱我家",
+      "desc": "我爱我家北京站，提供租房、二手房与房产信息服务。",
+      "url": "https://bj.5i5j.com/",
+      "host": "bj.5i5j.com",
+      "logo_url": "https://res1.5i5j.com/pc/images/favicon.ico"
+    },
+    {
+      "id": 236,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "租客网",
+      "desc": "深圳租客网，提供公寓、合租与房屋租赁信息。",
+      "url": "https://sz.zuke.com/",
+      "host": "sz.zuke.com",
+      "logo_url": "https://sz.zuke.com/public2/images/title-logo.ico"
+    },
+    {
+      "id": 237,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "房多多",
+      "desc": "房多多深圳站，提供新房、租房与房产交易信息。",
+      "url": "https://shenzhen.fangdd.com/",
+      "host": "shenzhen.fangdd.com",
+      "logo_url": "https://shenzhen.fangdd.com/favicon.ico"
+    },
+    {
+      "id": 238,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "Wellcee",
+      "desc": "Wellcee，提供城市租房、合租与共享居住信息。",
+      "url": "https://www.wellcee.com/",
+      "host": "wellcee.com",
+      "logo_url": "https://www.wellcee.com/favicon.ico"
+    },
+    {
+      "id": 239,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "爱彼迎",
+      "desc": "爱彼迎，提供民宿、短租与特色住宿预订服务。",
+      "url": "https://www.airbnb.cn/",
+      "host": "airbnb.cn",
+      "logo_url": "https://z1.muscache.cn/airbnb/static/icons/apple-touch-icon-76x76-3b313d93b1b5823293524b9764352ac9.png"
+    },
+    {
+      "id": 240,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "蚂蚁短租",
+      "desc": "蚂蚁短租，提供民宿、公寓与短租房源预订服务。",
+      "url": "https://www.mayi.com/",
+      "host": "mayi.com",
+      "logo_url": "https://m.mayi.com/favicon.ico"
+    },
+    {
+      "id": 241,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "小猪短租",
+      "desc": "小猪短租，提供民宿、短租与特色住宿服务。",
+      "url": "https://www.xiaozhu.com/",
+      "host": "xiaozhu.com",
+      "logo_url": "https://www.xiaozhu.com/favicon.ico"
+    },
+    {
+      "id": 242,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "豆瓣租房小组",
+      "desc": "提供租房交流与房源信息分享。",
+      "url": "https://www.douban.com/group/308599",
+      "host": "douban.com",
+      "logo_url": "https://img1.doubanio.com/favicon.ico"
+    },
+    {
+      "id": 243,
+      "primary": "生活服务",
+      "secondary": "租房与房产",
+      "title": "乐有家",
+      "desc": "乐有家房产平台，提供二手房、新房与租房信息服务。",
+      "url": "https://www.leyoujia.com/",
+      "host": "leyoujia.com",
+      "logo_url": "https://www.google.com/s2/favicons?sz=64&domain_url=https%3A%2F%2Fwww.leyoujia.com%2F"
     }
   ],
   "templates": {
@@ -1996,7 +2286,8 @@ window.SITE_DATA = {
       "通用效率",
       "云服务与存储",
       "颜色与辅助",
-      "未细分"
+      "未细分",
+      "校园服务"
     ],
     "学术科研": [
       "写作与文献",
@@ -2052,6 +2343,9 @@ window.SITE_DATA = {
     ],
     "其他网站": [
       "未细分"
+    ],
+    "生活服务": [
+      "租房与房产"
     ]
   },
   "order": {
@@ -2066,6 +2360,7 @@ window.SITE_DATA = {
       "学术科研",
       "考试与证书",
       "社区与内容",
+      "生活服务",
       "其他网站"
     ],
     "secondaries": {
@@ -2073,7 +2368,8 @@ window.SITE_DATA = {
         "通用效率",
         "云服务与存储",
         "颜色与辅助",
-        "未细分"
+        "未细分",
+        "校园服务"
       ],
       "学术科研": [
         "写作与文献",
@@ -2129,6 +2425,9 @@ window.SITE_DATA = {
       ],
       "其他网站": [
         "未细分"
+      ],
+      "生活服务": [
+        "租房与房产"
       ]
     }
   }
